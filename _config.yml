@@ -1,0 +1,236 @@
+# ----
+# Site
+
+title: WEX DOC
+description: WEX Interface documentation.
+url: https://wex2023.github.io/doc-api/
+google_analytics_key:
+permalink: pretty
+baseurl:
+
+# -----
+# Build
+
+timezone: Etc/UTC
+
+collections:
+  documentation:
+    title: Access Description
+    type: spot
+    language: en
+    position_number: 1
+  market:
+    title: Market
+    type: spot
+    language: en
+    position_number: 2
+  order:
+    title: Order
+    type: spot
+    language: en
+    position_number: 3
+  trade:
+    title: Trade
+    type: spot
+    language: en
+    position_number: 4
+  balance:
+    title: Balance
+    type: spot
+    language: en
+    position_number: 5
+  deposit_withdrawal:
+    title: Deposit/Withdrawal
+    type: spot
+    language: en
+    position_number: 6
+  transfer:
+    title: Transfer
+    type: spot
+    language: en
+    position_number: 7
+  websocket_public:
+    title: WEBSOCKET(public)
+    type: spot
+    language: en
+    position_number: 8
+  websocket_private:
+    title: WEBSOCKET(private)
+    type: spot
+    language: en
+    position_number: 9
+  documentation_cn:
+    title: 接入说明
+    type: spot
+    language: cn
+    position_number: 10
+  market_cn:
+    title: 市场数据
+    type: spot
+    language: cn
+    position_number: 11
+  order_cn:
+    title: 订单
+    type: spot
+    language: cn
+    position_number: 12
+  trade_cn:
+    title: 成交
+    type: spot
+    language: cn
+    position_number: 13
+  balance_cn:
+    title: 资产
+    type: spot
+    language: cn
+    position_number: 14
+  deposit_withdrawal_cn:
+    title: 充值/提现
+    type: spot
+    language: cn
+    position_number: 15
+  transfer_cn:
+    title: 划转
+    type: spot
+    language: cn
+    position_number: 16
+  websocket_public_cn:
+    title: WEBSOCKET(public)
+    type: spot
+    language: cn
+    position_number: 17
+  websocket_private_cn:
+    title: WEBSOCKET(private)
+    type: spot
+    language: cn
+    position_number: 18
+
+
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - CNAME
+  - favicon.ico
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - robots.txt
+
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      type: "documentation"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "market"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "order"
+    values:
+      _hide_content: true
+  - scope:
+      type: "trade"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "balance"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "deposit_withdrawal"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "websocket_public"
+    values:
+      _hide_content: true
+  - scope:
+      type: "websocket_private"
+    values:
+      _hide_content: true
+  - scope:
+      type: "documentation_cn"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "market_cn"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "order_cn"
+    values:
+      _hide_content: true
+  - scope:
+      type: "trade_cn"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "balance_cn"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "deposit_withdrawal_cn"
+    values:
+      _hide_content: true
+  -
+    scope:
+      type: "websocket_public_cn"
+    values:
+      _hide_content: true
+  - scope:
+      type: "websocket_private_cn"
+    values:
+      _hide_content: true
+
+# -----------
+# CloudCannon
+
+types:
+  - get
+  - put
+  - delete
+  - post
+
+languages:
+  bash: Bash
+  c: C
+  css: CSS
+  html: HTML
+  java: Java
+  javascript: JavaScript
+  json: JSON
+  php: PHP
+  python: Python
+  ruby: Ruby
+
+_options:
+  content_markdown:
+    format: p h4 h5 h6
+    bold: true
+    italic: true
+    link: true
+    bulletedlist: true
+    numberedlist: true
+    image: true
+    table: true
+    styles: /css/editor.css
