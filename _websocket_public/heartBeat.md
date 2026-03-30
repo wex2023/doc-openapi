@@ -2,7 +2,7 @@
 title: Heartbeat
 position_number: 5
 type:
-description: 
+description:
 
 parameters:
     -
@@ -12,15 +12,19 @@ parameters:
         default:
         description:
         ranges:
-content_markdown: Each link of the client needs to send a ping message periodically, and the server will reply to the pong message. If the server does not receive a ping message from the client within 1 minute, it will actively disconnect the link.
+content_markdown: >-
+    Each link of the client needs to send a text **"ping"** periodically, and the server will reply with **"pong"**.
+    If the server does not receive a ping message from the client within 1 minute, it will actively disconnect the link.
 left_code_blocks:
     -
-        code_block:
-        title: Python
-        language: python
+        code_block: |-
+            "ping"
+        title: Request
+        language: json
 right_code_blocks:
     -
-        code_block:
+        code_block: |-
+            "pong"
         title: Response
         language: json
 ---

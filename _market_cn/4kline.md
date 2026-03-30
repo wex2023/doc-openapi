@@ -1,8 +1,7 @@
 ---
-title: 获取k线数据
-position_number: 4
+title: 获取 K 线数据
+position_number: 5
 type: get
-split: -------------------------------------
 description: /v4/public/kline
 parameters:
     -
@@ -10,7 +9,7 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: 交易对  eg:btc_usdt
+        description: 交易对 例如：btc_usdt
         ranges:
     -
         name: interval
@@ -18,15 +17,15 @@ parameters:
         mandatory: true
         default:
         description: |-
-            K线类型 ,1m;3m;5m;15m;30m;1h;2h;4h;6h;8h;12h;1d;3d;1w;1M
-            eg:1m
+            K 线类型，
+            例如：1m
         ranges: '[1m;3m;5m;15m;30m;1h;2h;4h;6h;8h;12h;1d;3d;1w;1M]'
     -
         name: startTime
         type: number
         mandatory: false
         default:
-        description: 起始时间戳
+        description: 开始时间戳
         ranges:
     -
         name: endTime
@@ -40,13 +39,12 @@ parameters:
         type: number
         mandatory: false
         default: '100'
-        description: 限制数量
+        description:
         ranges: 1~1000
 content_markdown: >-
     #### **限流规则**
 
-    100/s/ip
-
+    10次/秒/IP
 
 left_code_blocks:
     -
@@ -68,13 +66,13 @@ right_code_blocks:
                   ],
                   "result": [
                     {
-                      "t": 1662601014832,   //开盘时间(time)
-                      "o": "30000",         //开盘价(open)
-                      "c": "32000",         //收盘价(close)
-                      "h": "35000",         //最高价(high)
-                      "l": "25000",         //最低价(low)
-                      "q": "512",           //成交量(quantity)
-                      "v": "15360000"       //成交额(volume)
+                      "t": 1662601014832,   //开盘时间
+                      "o": "30000",         //开盘价
+                      "c": "32000",         //收盘价
+                      "h": "35000",         //最高价
+                      "l": "25000",         //最低价
+                      "q": "512",           //成交量
+                      "v": "15360000"       //成交额
                     }
                   ]
                 }

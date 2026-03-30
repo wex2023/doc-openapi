@@ -1,12 +1,12 @@
 ---
 title: Get server time
 position_number: 1
-type: get 
+type: get
 description: /v4/public/time
 parameters:
     -
         name:
-        type: number
+        type:
         mandatory: false
         default:
         description:
@@ -14,11 +14,7 @@ parameters:
 content_markdown:
 left_code_blocks:
     -
-        code_block: |-
-            public String getServerInfo(){
-
-
-            }
+        code_block:
         title: Java
         language: java
     -
@@ -33,7 +29,7 @@ right_code_blocks:
                   "mc": "SUCCESS",
                   "ma": [],
                   "result": {
-                    "serverTime": 1662435658062  
+                    "serverTime": 1662435658062
                   }
                 }
         title: Response

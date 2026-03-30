@@ -1,5 +1,5 @@
 ---
-title: 历史订单查询
+title: 查询历史订单
 position_number: 9
 type: get
 description: /v4/history-order
@@ -9,38 +9,35 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: 交易对，不传代表所有
+        description: 交易对，不填表示全部
         ranges:
     -
         name: bizType
         type: string
         mandatory: false
         default:
-        description: >-
-            业务类型  SPOT-现货, LEVER-杠杆
+        description: "业务类型 SPOT, LEVER"
         ranges:
     -
         name: side
         type: string
         mandatory: false
         default:
-        description: BUY-买,SELL-卖
+        description: "买卖方向 BUY, SELL"
         ranges:
     -
         name: type
         type: string
         mandatory: false
         default:
-        description: 订单类型   LIMIT-现价, MARKET-市价
+        description: "订单类型 LIMIT, MARKET"
         ranges:
     -
         name: state
         type: string
         mandatory: false
         default:
-        description: >-
-            订单<a href="#orderStatusCn">状态</a>
-            NEW-新建,PARTIALLY_FILLED-部分成交,FILLED-全部成交,CANCELED-用户撤单,REJECTED-下单失败,EXPIRED-过期(time_in_force撤单或溢价撤单)
+        description: "订单状态 PARTIALLY_FILLED, FILLED, CANCELED, REJECTED, EXPIRED"
         ranges:
     -
         name: fromId
@@ -54,21 +51,21 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: 查询方向:PREV, NEXT
+        description: "查询方向: PREV, NEXT"
         ranges:
     -
         name: limit
         type: number
         mandatory: false
         default: '20'
-        description: 限制数量,最大100
+        description: 限制数量，最大100
         ranges:
     -
         name: startTime
         type: number
         mandatory: false
         default:
-        description: 开始时间 eg:1657682804112
+        description: "开始时间（示例：1657682804112）"
         ranges:
     -
         name: endTime
@@ -82,12 +79,12 @@ parameters:
         type: bool
         mandatory: false
         default:
-        description: 隐藏已取消
+        description: 是否隐藏已取消订单
         ranges:
 content_markdown: >-
     #### **限流规则**
 
-    10/s/apikey
+    10次/秒/每apikey
 left_code_blocks:
     -
         code_block:
@@ -109,7 +106,7 @@ right_code_blocks:
               "result": {
                 "hasPrev": true,
                 "hasNext": true,
-                "items": [   //内容信息参考单笔获取订单接口
+                "items": [
                   {
                     "symbol": "BTC_USDT",
                     "orderId": "6216559590087220004",
@@ -131,6 +128,7 @@ right_code_blocks:
                     "feeCurrency": "string",
                     "state": "NEW",
                     "time": 1655958915583,
+                    "ip": "127.0.0.1",
                     "updatedTime": 1655958915583
                   }
                 ]

@@ -1,6 +1,6 @@
 ---
 title: Get the best pending order ticker
-position_number: 9
+position_number: 10
 type: get
 description: /v4/public/ticker/book
 parameters:
@@ -9,7 +9,7 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: trading pair  eg:btc_usdt
+        description: trading pair eg:btc_usdt
         ranges:
     -
         name: symbols
@@ -29,7 +29,7 @@ content_markdown: >-
     #### **Limit Flow Rules**
 
 
-    1\.single symbol：100/s/ip
+    1\.single symbol：10/s/ip
 
 
     2\.multiple symbols：10/s/ip
@@ -53,12 +53,12 @@ right_code_blocks:
                   "ma": [],
                   "result": [
                     {
-                      "s": "btc_usdt",      //symbol
-                      "t": 1661856036925,   //last updated time 
-                      "ap": null,           //asks price(sell one price)
-                      "aq": null,           //asks qty(sell one quantity)
-                      "bp": null,           //bids price(buy one price)
-                      "bq": null            //bids qty(buy one quantity)
+                      "s": "btc_usdt",      //trading pair
+                      "t": 1661856036925,   //update time
+                      "ap": null,           //best ask price
+                      "aq": null,           //best ask quantity
+                      "bp": null,           //best bid price
+                      "bq": null            //best bid quantity
                     }
                   ]
                 }

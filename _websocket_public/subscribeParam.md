@@ -2,7 +2,7 @@
 title: Subscription parameters
 position_number: 6
 type:
-description: 
+description:
 
 parameters:
     -
@@ -19,11 +19,15 @@ content_markdown: |-
 left_code_blocks:
     -
         code_block:
-        title: Python
-        language: python
+        title: Request
+        language: json
 right_code_blocks:
     -
-        code_block:
+        code_block: |-
+            {
+                "code": 0,
+                "msg": "success"
+            }
         title: Response
         language: json
 ---

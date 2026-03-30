@@ -1,6 +1,6 @@
 ---
 title: Query the list of recent transactions
-position_number: 5
+position_number: 6
 type: get
 description: /v4/public/trade/recent
 parameters:
@@ -16,20 +16,16 @@ parameters:
         type: number
         mandatory: false
         default: '200'
-        description: 
-        ranges: 1，1000
+        description:
+        ranges: 1~1000
 content_markdown: >-
     #### **Limit Flow Rules**
-    
-    100/s/ip
+
+    10/s/ip
 
 left_code_blocks:
     -
-        code_block: |-
-            public String tradeRecent(){
-
-
-            }
+        code_block:
         title: Java
         language: java
     -
@@ -48,11 +44,11 @@ right_code_blocks:
                   "result": [
                     {
                       "i": 0,           //ID
-                      "t": 0,           //transaction time
-                      "p": "string",    //transaction price
-                      "q": "string",    //transaction quantity
-                      "v": "string",    //transaction volume
-                      "b": true         //whether is buyerMaker or not
+                      "t": 0,           //trade time
+                      "p": "string",    //trade price
+                      "q": "string",    //trade quantity
+                      "v": "string",    //trade volume
+                      "b": true         //whether buyer is the maker
                     }
                   ]
                 }

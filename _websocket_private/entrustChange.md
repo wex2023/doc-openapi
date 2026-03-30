@@ -3,7 +3,7 @@ title: Change of entrust
 position_number: 6
 display: 0
 type:
-description: 
+description:
 
 parameters:
     -
@@ -14,29 +14,35 @@ parameters:
         description:
         ranges:
 content_markdown: |-
-    param
+    **Subscription format:** trigger
 
-    format: trigger
+    &nbsp;
 
-    eg: trigger
+    This push notification is triggered when a **trigger/entrust order** changes.
+    Useful for tracking creation, updates, and state changes of trigger orders.
 left_code_blocks:
     -
-        code_block:
-        title: Python
-        language: python
+        code_block: |-
+            {
+                "method": "subscribe",
+                "params": ["trigger"],
+                "listenKey": "512312356123123123"
+            }
+        title: Subscribe
+        language: json
 right_code_blocks:
     -
         code_block: |-
             {
-                "topic": "trigger", 
-                "event": "trigger", 
+                "topic": "trigger",
+                "event": "trigger",
                 "data": {
                     "s": "btc_usdt",                // symbol
-                    "t": 1656043204763,             // time happened time
+                    "t": 1656043204763,             // time happened time (ms)
                     "i": "6216559590087220004",     // triggerId
-                    "st": "NEW"                     // state
+                    "st": "NEW"                     // state (e.g. NEW, FILLED, CANCELED)
                 }
             }
-        title: push
+        title: Push
         language: json
 ---

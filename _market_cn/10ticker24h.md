@@ -1,6 +1,6 @@
 ---
-title: 获取24h统计ticker
-position_number: 10
+title: 获取 24 小时统计行情
+position_number: 11
 type: get
 description: /v4/public/ticker/24h
 parameters:
@@ -9,30 +9,30 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: 交易对  eg:btc_usdt
+        description: 交易对 例如：btc_usdt
         ranges:
     -
         name: symbols
         type: array
         mandatory: false
         default:
-        description: '交易对集合，优先级高于symbol。 eg: btc_usdt,eth_usdt'
+        description: '交易对集合，优先级高于symbol。例如：btc_usdt,eth_usdt'
         ranges:
     -
         name: tags
         type: string
         mandatory: false
         default:
-        description: '标签集合,逗号分割，当前仅支持 spot'
+        description: '标签集合，用逗号分隔，目前仅支持 spot'
         ranges:
 content_markdown: >-
     #### **限流规则**
 
 
-    1\.单个交易对：100/s/ip
+    1\.单个交易对：10次/秒/IP
 
 
-    2\.多个交易对：10/s/ip
+    2\.多个交易对：10次/秒/IP
 
 
 left_code_blocks:
@@ -54,7 +54,7 @@ right_code_blocks:
                   "result": [
                     {
                       "s": "btc_usdt",     //交易对(symbol)
-                      "t": 1661856036925,  //时间(time) 
+                      "t": 1661856036925,  //时间(time)
                       "cv": "0.0000",      //价格变动(change value)
                       "cr": "0.00",        //价格变动百分比(change rate)
                       "o": "9000.0000",    //最早一笔(open)

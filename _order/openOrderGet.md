@@ -23,7 +23,7 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: BUY,SELL
+        description: BUY, SELL
         ranges:
 content_markdown: >-
     #### **Limit Flow Rules**
@@ -47,7 +47,7 @@ right_code_blocks:
                   "ma": [
                     {}
                   ],
-                  "result": [      //For field information, refer to the Get single interface
+                  "result": [
                     {
                       "symbol": "BTC_USDT",
                       "orderId": "6216559590087220004",
@@ -69,6 +69,7 @@ right_code_blocks:
                       "feeCurrency": "string",
                       "state": "NEW",
                       "time": 1655958915583,
+                      "ip": "127.0.0.1",
                       "updatedTime": 1655958915583
                     }
                   ]

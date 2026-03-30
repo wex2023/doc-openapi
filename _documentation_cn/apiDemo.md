@@ -5,19 +5,24 @@ parameters:
 - name:
 content:
 content_markdown: >-
-  Java connector
+    **Java 连接器**
 
 
-  一个轻量级的Java代码库，提供让用户直接调用API的方法。 
+    一个轻量级的 Java 代码库，提供了允许用户直接调用 API 的方法。
 
-    各个语言的sdk：
-        
-        java : https://github.com/wex2023/java-demo
-    
-    各个接口的请求信息样例
-        
-        https://github.com/wex2023/java-demo/blob/master/request.txt
 
+    **各语言 SDK：**
+
+    - Java: [xt4-java-demo](https://github.com/xt-com/xt4-java-demo)
+
+    - Golang: [xt4-go-demo](https://github.com/xt-com/xt4-go-demo)
+
+    - C#: [xt4-c--demo](https://github.com/xt-com/xt4-c--demo)
+
+
+    **请求示例：**
+
+    您可以在这里找到每个接口的示例请求信息：[request-xt.txt](https://github.com/xt-com/xt4-request-demo/blob/master/request-xt.txt)
 
 left_code_blocks:
 - code_block:

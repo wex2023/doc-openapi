@@ -1,8 +1,7 @@
 ---
 title: Get 24h statistics ticker
-position_number: 10
+position_number: 11
 type: get
-split: -------------------------------------
 description: /v4/public/ticker/24h
 parameters:
     -
@@ -10,7 +9,7 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: trading pair  eg:btc_usdt
+        description: trading pair eg:btc_usdt
         ranges:
     -
         name: symbols
@@ -30,7 +29,7 @@ content_markdown: >-
     #### **Limit Flow Rules**
 
 
-    1\.single symbol：100/s/ip
+    1\.single symbol：10/s/ip
 
 
     2\.multiple symbols：10/s/ip
@@ -55,7 +54,7 @@ right_code_blocks:
                   "result": [
                     {
                       "s": "btc_usdt",      //symbol
-                      "t": 1661856036925,   //time 
+                      "t": 1661856036925,   //time
                       "cv": "0.0000",       //price change value
                       "cr": "0.00",         //price change rate
                       "o": "9000.0000",     //open price

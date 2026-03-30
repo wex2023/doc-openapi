@@ -2,7 +2,7 @@
 title: Change of balance
 position_number: 5
 type:
-description: 
+description:
 
 parameters:
     -
@@ -13,32 +13,39 @@ parameters:
         description:
         ranges:
 content_markdown: |-
-    param
+    **Subscription format:** balance
 
-    format: balance
+    &nbsp;
 
-    eg: balance
+    This push notification is triggered when a user's account balance changes.
+    Supports both **SPOT** and **LEVER** business types.
+    Useful for tracking real-time balance changes after trades, deposits, withdrawals, or transfers.
 left_code_blocks:
     -
-        code_block:
-        title: Python
-        language: python
+        code_block: |-
+            {
+                "method": "subscribe",
+                "params": ["balance"],
+                "listenKey": "512312356123123123"
+            }
+        title: Subscribe
+        language: json
 right_code_blocks:
     -
         code_block: |-
             {
-                "topic": "balance", 
-                "event": "balance", 
+                "topic": "balance",
+                "event": "balance",
                 "data": {
-                    "a": "123",           // accountId                     
-                    "t": 1656043204763,   // time happened time
+                    "a": "123",           // accountId
+                    "t": 1656043204763,   // time happened time (ms)
                     "c": "btc",           // currency
-                    "b": "123",           // balance available balance
-                    "f": "11",            // frozen
-                    "z": "SPOT",           // bizType [SPOT,LEVER]
+                    "b": "123",           // balance total spot balance
+                    "f": "11",            // frozen amount
+                    "z": "SPOT",          // bizType [SPOT,LEVER]
                     "s": "btc_usdt"       // symbol
                 }
             }
-        title: push
+        title: Push
         language: json
 ---

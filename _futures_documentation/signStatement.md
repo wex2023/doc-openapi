@@ -1,0 +1,57 @@
+---
+title: Signature Statement
+position_number: 2
+parameters:
+- name:
+content:
+content_markdown: >-
+    #### Signature Parameters Description
+
+
+    Since XT provides open APIs to third-party platforms, data security must be ensured - for example, preventing data tampering, avoiding outdated data, blocking duplicate submissions, and controlling request frequency. Among these, **data integrity verification** is the most crucial aspect.
+
+
+    #### Signature Parameters
+
+
+    1. **validate-appkey** - Public key obtained after applying for the API Key
+
+    2. **validate-timestamp** - Request timestamp in milliseconds (Unix time). Request validity is determined based on this value and `validate-recvwindow`
+
+    3. **validate-signature** - Some API requests require a signature. See details in the Obtain Signature section.
+
+    4. **validate-recvwindow** - Defines the validity period of a request. Default is 5 seconds; maximum is 60 seconds. If the timestamp is more than 5000ms earlier than server time, the request is invalid. If the client timestamp is more than 1 second ahead of server time, the request will also be rejected. It is not recommended to exceed 5 seconds.
+
+    5. **validate-algorithms** - Signature is generated using an HSC-based algorithm. Default: HmacSHA256. Supported: HmacMD5, HmacSHA1, HmacSHA224, HmacSHA256, HmacSHA384, HmacSHA512
+
+
+    #### Request Header Signature Parameters
+
+
+    | Name | Required | Example | Description |
+
+    | --- | --- | --- | --- |
+
+    | validate-appkey | TRUE | dbefbc809e3e83c283a984c3a1459732ea7db1360ca80c5c2c8867408d28cc83 | Public key |
+
+    | validate-timestamp | TRUE | 1641446237201 | Unix timestamp (milliseconds) |
+
+    | validate-signature | TRUE | 0a7d0b5e802eb5e52ac0cfcd6311b0faba6e2503a9a8d1e2364b38617877574d | Generated signature |
+
+    | validate-recvwindow | FALSE | 5000 (ms) | Validity time window |
+
+    | validate-algorithms | FALSE | HmacSHA256 | Default HmacSHA256 |
+
+    | api-version | FALSE | 1 | Reserved field, API version number |
+
+    | validate-signversion | FALSE | 1 | Reserved field, signature version |
+
+left_code_blocks:
+- code_block:
+  title:
+  language:
+right_code_blocks:
+- code_block:
+  title:
+  language:
+---

@@ -5,11 +5,11 @@ type: get
 description: /v4/balance
 parameters:
     -
-        name: 'currency '
+        name: currency
         type: string
         mandatory: true
         default:
-        description: eg:usdt
+        description: "Currency, e.g. usdt"
         ranges:
 content_markdown:
 left_code_blocks:
@@ -31,15 +31,14 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "currency": "usdt",  
-                    "currencyId": 0,   
-                    "frozenAmount": 0,  
-                    "availableAmount": 0,  
-                    "totalAmount": 0,    
-                    "convertBtcAmount": 0  //Converted BTC amount
+                    "currency": "usdt",          // currency
+                    "currencyId": 0,             // currency ID
+                    "frozenAmount": 0,           // frozen amount
+                    "availableAmount": 0,        // available amount
+                    "totalAmount": 0,            // total amount
+                    "convertBtcAmount": 0        // equivalent BTC amount
                   }
                 }
         title: Response
         language: json
 ---
-

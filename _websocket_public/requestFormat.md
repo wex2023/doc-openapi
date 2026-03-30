@@ -15,30 +15,34 @@ content_markdown:
 left_code_blocks:
     -
         code_block: |-
-                {
-                    "method": "subscribe", 
-                    "params": [
-                        "{topic}@{arg},{arg}", 
-                        "{topic}@{arg}"
-                    ], 
-                    "id": "{id}"    //call back ID
-                }
-        title: subscribe
+            {
+                "method": "subscribe",
+                "params": [
+                    "{topic}@{arg},{arg}",
+                    "{topic}@{arg}"
+                ],
+                "id": "{id}"    //call back ID
+            }
+        title: Subscribe
         language: javascript
     -
         code_block: |-
-                {
-                    "method": "unsubscribe", 
-                    "params": [
-                        "{topic}@{arg},{arg}"
-                    ], 
-                    "id": "{id}"   //call back ID
-                }
-        title: unsubscribe
+            {
+                "method": "unsubscribe",
+                "params": [
+                    "{topic}@{arg},{arg}"
+                ],
+                "id": "{id}"   //call back ID
+            }
+        title: Unsubscribe
         language: javascript
 right_code_blocks:
     -
-        code_block:
+        code_block: |-
+            {
+                "code": 0,
+                "msg": "success"
+            }
         title: Response
         language: json
 ---

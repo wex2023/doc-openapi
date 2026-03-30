@@ -23,7 +23,7 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: BUY,SELL
+        description: BUY, SELL
         ranges:
     -
         name: type
@@ -37,14 +37,14 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: order <a href="#orderStatus">state</a>, <br> PARTIALLY_FILLED,<br> FILLED,   CANCELED,<br> REJECTED,EXPIRED
+        description: order state, PARTIALLY_FILLED, FILLED, CANCELED, REJECTED, EXPIRED
         ranges:
     -
         name: fromId
         type: number
         mandatory: false
         default:
-        description: start id
+        description: Start ID
         ranges:
     -
         name: direction
@@ -65,21 +65,21 @@ parameters:
         type: number
         mandatory: false
         default:
-        description: eg:1657682804112
+        description: Start time (e.g. 1657682804112)
         ranges:
     -
         name: endTime
         type: number
         mandatory: false
         default:
-        description: 
+        description: End time
         ranges:
     -
         name: hiddenCanceled
         type: bool
         mandatory: false
         default:
-        description: 
+        description: Whether to hide canceled orders
         ranges:
 content_markdown: >-
     #### **Limit Flow Rules**
@@ -106,7 +106,7 @@ right_code_blocks:
               "result": {
                 "hasPrev": true,
                 "hasNext": true,
-                "items": [   //For field information, refer to the Get single interface
+                "items": [
                   {
                     "symbol": "BTC_USDT",
                     "orderId": "6216559590087220004",
@@ -128,6 +128,7 @@ right_code_blocks:
                     "feeCurrency": "string",
                     "state": "NEW",
                     "time": 1655958915583,
+                    "ip": "127.0.0.1",
                     "updatedTime": 1655958915583
                   }
                 ]

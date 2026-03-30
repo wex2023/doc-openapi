@@ -2,7 +2,7 @@
 title: Request message format
 position_number: 2
 type:
-description: 
+description:
 
 parameters:
     -
@@ -16,32 +16,38 @@ content_markdown: |-
     **param format**
 
     \{topic\}@\{arg\},\{arg\},…
+
+    &nbsp;
+
+    - listenKey must be applied via the **/v4/ws-token** endpoint.
+
+    - id is a custom request identifier for matching responses.
 left_code_blocks:
     -
         code_block: |-
-                {
-                    "method": "subscribe", 
-                    "params": [
-                        "{topic}@{arg},{arg}",    //event
-                        "{topic}@{arg}"
-                    ], 
-                    "listenKey": "512312356123123123",   //the listener Key, Apply accessToken through /v4/ws-token interface
-                    "id": "{id}"
-                }
-        title: subscribe
+            {
+                "method": "subscribe",
+                "params": [
+                    "{topic}@{arg},{arg}",    //event
+                    "{topic}@{arg}"
+                ],
+                "listenKey": "512312356123123123",   //the listener Key, Apply accessToken through /v4/ws-token interface
+                "id": "{id}"
+            }
+        title: Subscribe
         language: javascript
     -
         code_block: |-
             {
-                "method": "unsubscribe", 
+                "method": "unsubscribe",
                 "params": [
                     "{topic}@{arg},{arg}",    //event
                     "{topic}@{arg}"
-                ], 
+                ],
                 "listenKey": "512312356123123123",   //the listener Key, Apply accessToken through /v4/ws-token interface
                 "id": "{id}"
             }
-        title: unsubscribe
+        title: Unsubscribe
         language: javascript
 right_code_blocks:
     -

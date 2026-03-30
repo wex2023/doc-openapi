@@ -9,14 +9,14 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: 
+        description:
         ranges:
     -
         name: clientOrderId
         type: string
         mandatory: false
         default:
-        description: 'Pattern: ^[a-zA-Z0-9_]{4,32}$'
+        description: 'Pattern: ^[a-zA-Z0-9_]{4,22}$'
         ranges:
     -
         name: side
@@ -67,10 +67,21 @@ parameters:
         default:
         description: amount. Required if it is the LIMIT price or the order is the market price when placing an order by amount
         ranges:
+    -
+        name: nftId
+        type: string
+        mandatory: false
+        default:
+        description: nft id
+        ranges:
 content_markdown: >-
+    #### Remark
+
+    Create a BUY order based on market price, quantity must be null, quoteQty required. Create a SELL order based on market price, quoteQty must be null, quantity required.
+
     #### **Limit Flow Rules**
-    
-    50/s/apikey
+
+    20/s/apikey
 
 left_code_blocks:
     -
@@ -95,7 +106,8 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "orderId": "6216559590087220004"  
+                    "orderId": "6216559590087220004",
+                    "ip": "127.0.0.1"
                   }
                 }
         title: Response

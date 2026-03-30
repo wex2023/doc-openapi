@@ -9,49 +9,49 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: Trading pair, if not filled in, represents all
+        description: Trading pair, if not filled, represents all
         ranges:
     -
         name: bizType
         type: string
         mandatory: false
         default:
-        description: "SPOT, LEVER"
+        description: "Business type: SPOT, LEVER"
         ranges:
     -
         name: orderSide
         type: string
         mandatory: false
         default:
-        description: BUY,SELL
+        description: "Order side: BUY, SELL"
         ranges:
     -
         name: orderType
         type: string
         mandatory: false
         default:
-        description: LIMIT, MARKET
+        description: "Order type: LIMIT, MARKET"
         ranges:
     -
         name: orderId
         type: number
         mandatory: false
         default:
-        description: 
+        description: Order ID
         ranges:
     -
         name: fromId
         type: number
         mandatory: false
         default:
-        description: start id
+        description: Start ID
         ranges:
     -
         name: direction
         type: string
         mandatory: false
         default:
-        description: query direction:PREV, NEXT
+        description: "Query direction: PREV, NEXT"
         ranges:
     -
         name: limit
@@ -65,16 +65,17 @@ parameters:
         type: number
         mandatory: false
         default:
-        description: start time eg:1657682804112
+        description: "Start time (e.g. 1657682804112)"
         ranges:
     -
         name: endTime
         type: number
         mandatory: false
         default:
-        description: 
+        description: End time
         ranges:
-content_markdown:
+content_markdown: >-
+    This endpoint retrieves trade records. Supports filtering by trading pair, business type, side, order type, time range, and pagination.
 left_code_blocks:
     -
         code_block:
@@ -98,21 +99,25 @@ right_code_blocks:
                     "hasNext": true,
                     "items": [
                       {
-                        "symbol": "BTC_USDT",  
-                        "tradeId": "6316559590087222001",  
-                        "orderId": "6216559590087220004",  
-                        "orderSide": "BUY",    
-                        "orderType": "LIMIT",  
-                        "bizType": "SPOT",    
-                        "time": 1655958915583,  
-                        "price": "40000",     
-                        "quantity": "1.2",    
-                        "quoteQty": "48000",   //amount
-                        "baseCurrency": "BTC",  
-                        "quoteCurrency": "USDT",  
-                        "fee": "0.5",   
-                        "feeCurrency": "USDT", 
-                        "takerMaker": "taker"  //takerMaker
+                        "symbol": "BTC_USDT",                    // Trading pair
+                        "tradeId": "6316559590087222001",        // Trade ID
+                        "orderId": "6216559590087220004",        // Order ID
+                        "orderSide": "BUY",                      // Order direction
+                        "orderType": "LIMIT",                    // Order type
+                        "bizType": "SPOT",                       // Business type
+                        "time": 1655958915583,                   // Trade time
+                        "price": "40000",                        // Trade price
+                        "quantity": "1.2",                       // Trade quantity
+                        "quoteQty": "48000",                     // Trade amount
+                        "baseCurrency": "BTC",                   // Base currency
+                        "quoteCurrency": "USDT",                 // Quote currency
+                        "takerMaker": "taker",                   // Taker/Maker
+                        "deductType": "COUPON",                  // Fee deduction type: COUPON / PLATFORM_CURRENCY / null
+                        "deductFee": "0.003",                    // Deducted fee amount if using coupon; otherwise null
+                        "fee": "0.5",                            // Fee amount (or platform currency amount if deducted)
+                        "feeCurrency": "USDT",                   // Fee currency
+                        "couponAmount": "0.002",                 // Coupon amount if used; otherwise null
+                        "couponCurrency": "usdt"                 // Coupon currency if used; otherwise null
                       }
                     ]
                   }
@@ -120,4 +125,3 @@ right_code_blocks:
         title: Response
         language: json
 ---
-

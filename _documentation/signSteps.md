@@ -7,68 +7,66 @@ content:
 content_markdown: >-
 
     Take https://sapi.wexex.io/v4/order as an example.
-    
-    
-    The following is an example appkey and secret for placing an order using a call interface implemented by echo openssl and curl tools in the linux bash environment for demonstration purposes only:
-    
-    
-    appKey: 48f05386-4228-48e1-a69f-c9abd2d8fa52
-    
 
-    secretKey: 8fcffde41cb50b18ce9178424f38d3b688fd0f47
-    
 
+    The following **appKey/secret** are **for demo only** (Linux bash with `echo`, `openssl`, `curl`):
+
+
+    appKey: 3976eb88-76d0-4f6e-a6b2-a57980770085
+
+
+    secretKey: bc6630d0231fda5cd98794f52c4998659beda290
 
 
 
-    Header part data：
+
+    Required Headers:
 
         validate-algorithms: HmacSHA256
-    
-        validate-appkey: 48f05386-4228-48e1-a69f-c9abd2d8fa52
-    
+
+        validate-appkey: 3976eb88-76d0-4f6e-a6b2-a57980770085
+
         validate-recvwindow: 5000
-    
-        validate-timestamp: 1692672585907
-    
-        validate-signature: c58a59cf674b80bd3c9182f3db4feddc87ea4f3be7762bbf4bfab39429eec7e9
+
+        validate-timestamp: 1641446237201
+
+        validate-signature: 2b5eb11e18796d12d88f13dc27dbbd02c2cc51ff7059765ed9821957d82bb4d9
 
 
 
-    request data：
+    Sample Request Body:
 
         {
-          type: 'LIMIT',
-          timeInForce: 'GTC',
-          side: 'BUY',
-          symbol: 'btc_usdt',
-          bizType: 'SPOT'
-          price: '39000',
-          quantity: '2'
+          "type": "LIMIT",
+          "timeInForce": "GTC",
+          "side": "BUY",
+          "symbol": "btc_usdt",
+          "price": "39000",
+          "quantity": "2"
         }
 
 
 
-    1.data part
+    **1. Data Part Concatenation (Y)**
 
-        method: UpperCase method. eg: GET, POST, DELETE, PUT
-    
-        path: Concatenate all values in the order in path. The restful path in the form of /test/{var1}/{var2}/ will be spliced according to the actual parameters filled in, for example: /sign/test/bb/aa
-  
-        query: Sort all key=value according to the lexicographical order of the key. Example: userName=dfdfdf&password=ggg
-  
-        body:   
-            Json: Directly by JSON string without conversion or sorting.
-  
-            x-www-form-urlencoded: Sort all key=values according to the lexicographical order of keys, for example: userName=dfdfdf&password=ggg
-    
-            form-data：This format is not currently supported.
-  
-        If there are multiple data forms, re-splicing is performed in the order of path, query, and body to obtain the splicing value of all data.
+        method: uppercase HTTP method, e.g. GET, POST, DELETE, PUT
+
+        path: concrete RESTful path after filling variables, e.g. /sign/test/bb/aa
+
+        query: sort all key=value by key (lexicographical), join with &. Example: userName=dfdfdf&password=ggg
+
+        body:
+            JSON: use the raw JSON string (no conversion/sorting)
+
+            x-www-form-urlencoded: sort all key=value by key (lexicographical), join with &. Example: userName=dfdfdf&password=ggg
+
+            form-data: not supported
+
+        If multiple forms exist, concatenate in order: path -> query -> body.
 
 
     Method example:
-        
+
         POST
 
     Path example:
@@ -87,86 +85,79 @@ content_markdown: >-
 
 
 
-    Parameters via body example
+    Parameters via body example:
 
         x-www-form-urlencoded:
-      
-            symbol=btc_usdt&side=BUY&bizType=SPOT&quantity=2&price=39000&type=LIMIT&timeInForce=GTC
+
+            symbol=btc_usdt&side=BUY&type=LIMIT&timeInForce=GTC&quantity=1&price=0.1
 
             The above concatenated value is recorded as body
 
         json:
-  
-            {"symbol":"btc_usdt","side":"BUY","bizType":"SPOT","quantity":2,"price":39000,"type":"LIMIT","timeInForce":"GTC"}
+
+            {"symbol":"btc_usdt","side":"BUY","type":"LIMIT","timeInForce":"GTC","quantity":2,"price":39000}
 
             The above concatenated value is recorded as body
 
 
 
-    Mixed use of query and body (divided into form and json format)
+    Mixed use of query and body (divided into form and json format):
 
-        query: 
+        query:
             symbol=btc_usdt&side=BUY&type=LIMIT
             The above concatenated value is recorded as query
 
-        body: 
-            {"symbol":"btc_usdt","side":BUY,"type":"LIMIT"}
+        body:
+            {"symbol":"btc_usdt","side":"BUY","type":"LIMIT"}
             The above concatenated value is recorded as body
 
 
 
-    The most concatenated value of the entire data is spliced with method, path, query, and body by the # symbol to form #method, #path, #query, and #body, and the final spliced value is recorded as Y=#method#path#query#body.
+    Finally, splice by # with leading markers:
 
-    Notice：
+        Y = #method#path#query#body
 
-        The query has data, but the body has no data: Y=#method#path#query
+    Notice:
 
-        query has no data, body has data: Y=#method#path#body
+        query present, body empty: Y = #method#path#query
 
-        query has data, body has data: Y=#method#path#query#body
+        query empty, body present: Y = #method#path#body
 
-
-
-
-
-    2.request header part
-        After the keys are in natural ascending alphabetical order, use & to join them together as X. like:
-
-            validate-algorithms=HmacSHA256&validate-appkey=48f05386-4228-48e1-a69f-c9abd2d8fa52&validate-recvwindow=5000&validate-timestamp=1692672585907
+        both present: Y = #method#path#query#body
 
 
 
-    3.generate signature
-    
-        Finally, the string that needs to be encrypted is recorded as original=XY
-    
-        Finally, encrypt the final concatenated value according to the following method to obtain a signature.
-    
-        signature=org.apache.commons.codec.digest.HmacUtils.hmacSha256Hex(secretkey, original);
-    
-        Put the generated signature singature in the request header, with validate-signature as the key and singature as the value.
 
-    4.example
+    **2. Header Part Concatenation (X)**
 
-        sample of original signature message:
-          
-            validate-algorithms=HmacSHA256&validate-appkey=48f05386-4228-48e1-a69f-c9abd2d8fa52&validate-recvwindow=5000&validate-timestamp=1692672585907#POST#/v4/order#{"symbol":"btc_usdt","side":"BUY","bizType":"SPOT","quantity":2,"price":39000,"type":"LIMIT","timeInForce":"GTC"}
+        Sort the following header keys in natural ascending alphabetical order, then join with &:
 
-        sample request message:
-  
-            curl --location --request POST 'https://sapi.wexex.io/v4/order' 
-            --header 'accept: */*' 
-            --header 'Content-Type: application/json' 
-            --header 'validate-algorithms: HmacSHA256' 
-            --header 'validate-appkey: 48f05386-4228-48e1-a69f-c9abd2d8fa52' 
-            --header 'validate-recvwindow: 5000' 
-            --header 'validate-timestamp: 1692672585907' 
-            --header 'validate-signature: c58a59cf674b80bd3c9182f3db4feddc87ea4f3be7762bbf4bfab39429eec7e9' 
-            --data-raw '{"symbol":"btc_usdt","side":"BUY","bizType":"SPOT","quantity":2,"price":39000,"type":"LIMIT","timeInForce":"GTC"}'    
+            validate-algorithms=HmacSHA256&validate-appkey=3976eb88-76d0-4f6e-a6b2-a57980770085&validate-recvwindow=5000&validate-timestamp=1641446237201
 
-        matters needing attention:
 
-            Pay attention to checking the parameter format of Content Type, signature original message and request message
+
+    **3. Generate Signature**
+
+        Concatenate original = X + Y (no delimiter beyond the # already in Y), then compute:
+
+        signature = org.apache.commons.codec.digest.HmacUtils.hmacSha256Hex(secretKey, original);
+
+        Add the generated value to the request header: validate-signature: <signature>
+
+
+    **4. Complete Example**
+
+        Sample original signature message:
+
+            validate-algorithms=HmacSHA256&validate-appkey=2063495b-85ec-41b3-a810-be84ceb78751&validate-recvwindow=60000&validate-timestamp=1666026215729#POST#/v4/order#{"symbol":"XT_USDT","side":"BUY","type":"LIMIT","timeInForce":"GTC","bizType":"SPOT","price":3,"quantity":2}
+
+        Matters needing attention:
+
+            Ensure Content-Type, signature original message, and final request payload are consistent.
+
+            validate-timestamp should be milliseconds of the send time; pair with a reasonable validate-recvwindow to tolerate network jitter.
+
+            When body is JSON, use the exact raw JSON string for signing (don't reorder keys or prettify).
 
 
 left_code_blocks:

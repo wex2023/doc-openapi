@@ -1,6 +1,6 @@
 ---
 title: Get latest prices ticker
-position_number: 8
+position_number: 9
 type: get
 description: /v4/public/ticker/price
 parameters:
@@ -9,7 +9,7 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: trading pair  eg:btc_usdt
+        description: trading pair eg:btc_usdt
         ranges:
     -
         name: symbols
@@ -29,7 +29,7 @@ content_markdown: >-
     #### **Limit Flow Rules**
 
 
-    1\.single symbol：100/s/ip
+    1\.single symbol：10/s/ip
 
 
     2\.multiple symbols：10/s/ip
@@ -37,11 +37,7 @@ content_markdown: >-
 
 left_code_blocks:
     -
-        code_block: |-
-            public String price(){
-
-
-            }
+        code_block:
         title: Java
         language: java
     -
@@ -57,10 +53,10 @@ right_code_blocks:
               "ma": [],
               "result": [
                 {
-                  "s": "btc_usdt",      //symbol
-                  "t": 1661856036925    //time
-                  "p": "9000.0000",     //price
-                  }
+                  "s": "btc_usdt",      //trading pair
+                  "t": 1661856036925,   //timestamp
+                  "p": "9000.0000"      //price
+                }
               ]
             }
         title: Response

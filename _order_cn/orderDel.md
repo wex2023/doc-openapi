@@ -1,5 +1,5 @@
 ---
-title: 单笔撤单
+title: 取消订单
 position_number: 3
 type: delete
 split: -------------------------------------
@@ -13,9 +13,9 @@ parameters:
         description: 订单ID
         ranges:
 content_markdown: >-
-    #### **限流规则**
+    #### **限频规则**
 
-    100/s/apikey
+    无限制
 left_code_blocks:
     -
         code_block: |-

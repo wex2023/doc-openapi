@@ -2,7 +2,7 @@
 title: Response message format
 position_number: 3
 type:
-description: 
+description:
 
 parameters:
     -
@@ -21,15 +21,15 @@ left_code_blocks:
                 "code": 1,      //result 0=success;1=fail;2=listenKey invalid
                 "msg": ""
             }
-        title: format
+        title: Format
         language: javascript
 right_code_blocks:
     -
-        code_block: '{"id":"123", "code": 0, "msg": "success"}   '
+        code_block: '{"id":"123", "code": 0, "msg": "success"}'
         title: Response-success
         language: json
     -
         code_block: '{"id":"123", "code": 401, "msg": "token expire"}'
-        title: response-token invalid
+        title: Response-token invalid
         language: json
 ---

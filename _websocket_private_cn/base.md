@@ -1,8 +1,8 @@
 ---
-title: 基地址
+title: WebSocket 基本信息
 position_number: 1
 type:
-description: 
+description:
 
 parameters:
     -
@@ -12,15 +12,15 @@ parameters:
         default:
         description:
         ranges:
-content_markdown: '**wss://stream.wexex.io/private**'
+content_markdown: '**wss://stream.xt.com/private**'
 left_code_blocks:
     -
         code_block:
-        title: Python
-        language: python
+        title: 请求
+        language: json
 right_code_blocks:
     -
         code_block:
-        title: Response
+        title: 响应
         language: json
 ---

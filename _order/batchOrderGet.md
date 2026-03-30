@@ -9,9 +9,10 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: 'order Ids eg:  6216559590087220004, <br>6216559590087220004'
+        description: 'order Ids eg: 6216559590087220004, 6216559590087220004'
         ranges:
-content_markdown: reponse field information, refer to the Get single interface
+content_markdown: >-
+    Response field information, refer to the **Get single interface**.
 left_code_blocks:
     -
         code_block: |-
@@ -56,6 +57,7 @@ right_code_blocks:
                           "feeCurrency": "string",
                           "state": "NEW",
                           "time": 1655958915583,
+                          "ip": "127.0.0.1",
                           "updatedTime": 1655958915583
                         }
                       ]

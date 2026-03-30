@@ -1,15 +1,15 @@
 ---
-title: 获取单个币种资产
+title: 获取单一币种资产
 position_number: 2
 type: get
 description: /v4/balance
 parameters:
     -
-        name: 'currency '
+        name: currency
         type: string
         mandatory: true
         default:
-        description: eg:usdt
+        description: "币种，例如：usdt"
         ranges:
 content_markdown:
 left_code_blocks:
@@ -31,15 +31,14 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "currency": "usdt",     //币种
-                    "currencyId": 0,        //币种ID
-                    "frozenAmount": 0,      //冻结数量
-                    "availableAmount": 0,   //可用数量
-                    "totalAmount": 0,       //总数量
-                    "convertBtcAmount": 0   //折算BTC数量
+                    "currency": "usdt",          // 币种
+                    "currencyId": 0,             // 币种ID
+                    "frozenAmount": 0,           // 冻结数量
+                    "availableAmount": 0,        // 可用数量
+                    "totalAmount": 0,            // 总数量
+                    "convertBtcAmount": 0        // 折合BTC数量
                   }
                 }
         title: Response
         language: json
 ---
-

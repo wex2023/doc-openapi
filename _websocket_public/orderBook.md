@@ -3,7 +3,7 @@ title: Orderbook manage
 position_number: 7
 split: -------------------------------------
 type:
-description: 
+description:
 
 parameters:
     -
@@ -14,46 +14,43 @@ parameters:
         description:
         ranges:
 content_markdown: |-
-        **How to manage a local order book correctly**
-        
-
-        1.Open a stream to wss://stream.wexex.io/public , depth_update@btc_usdt
+    **How to manage a local order book correctly**
 
 
-        2.Buffer the events you receive from the stream.
+    1.Open a stream to wss://stream.xt.com/public , e.g. depth\_update@btc\_usdt.
 
 
-        3.Get a depth snapshot from https://sapi.wexex.io/v4/public/depth?symbol=btc_usdt&limit=500
+    2.Buffer the events you receive from the stream.
 
 
-        4.Drop any event where i is <= lastUpdateId in the snapshot.
+    3.Get a depth snapshot from https://sapi.xt.com/v4/public/depth?symbol=btc\_usdt&limit=500
 
 
-        5.The first processed event should have fi <= lastUpdateId+1 AND i >= lastUpdateId+1.
+    4.Drop any event where i <= lastUpdateId in the snapshot.
 
 
-        6.While listening to the stream, each new event's fi should be equal to the previous event's i+1.
+    5.The first processed event should have fi <= lastUpdateId+1 AND i >= lastUpdateId+1.
 
 
-        7.The data in each event is the absolute quantity for a price level.
+    6.While listening to the stream, each new event's fi should be equal to the previous event's i+1.
 
 
-        8.If the quantity is 0, remove the price level.
+    7.The data in each event is the absolute quantity for a price level.
 
 
-        9.Receiving an event that removes a price level that is not in your local order book can happen and is normal.
+    8.If the quantity is 0, remove the price level.
 
 
-        Note: Due to depth snapshots having a limit on the number of price levels, a price level outside of the initial snapshot that doesn't have a quantity change won't have an update in the Diff. 
-        Depth Stream. Consequently, those price levels will not be visible in the local order book even when applying all updates from the Diff. 
-        Depth Stream correctly and cause the local order book to have some slight differences with the real order book. However, 
-        for most use cases the depth limit of 500 is enough to understand the market and trade effectively.
-            
+    9.Receiving an event that removes a price level that is not in your local order book can happen and is normal.
+
+
+    **Note:** Due to depth snapshots having a limit on the number of price levels, a price level outside of the initial snapshot that doesn't have a quantity change won't have an update in the Diff Depth Stream. Consequently, those price levels will not be visible in the local order book even when applying all updates from the Diff Depth Stream correctly. This can cause the local order book to have some slight differences with the real order book. However, for most use cases the depth limit of 500 is enough to understand the market and trade effectively.
+
 left_code_blocks:
     -
         code_block:
-        title: Python
-        language: python
+        title: Request
+        language: json
 right_code_blocks:
     -
         code_block:

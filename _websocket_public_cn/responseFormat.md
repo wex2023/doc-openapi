@@ -1,8 +1,8 @@
 ---
-title: 响应报文格式
+title: 响应消息格式
 position_number: 3
 type:
-description: 
+description:
 
 parameters:
     -
@@ -17,19 +17,19 @@ left_code_blocks:
     -
         code_block: |-
             {
-                "id": "{id}",   //请求回调ID
-                "code": 1,      //结果0=成功;1=失败;2=listenKey⽆效
+                "id": "{id}",   //回调 ID
+                "code": 1,      //结果 0=成功; 1=失败; 2=listenKey 无效
                 "msg": ""
             }
-        title: 响应报文格式
+        title: 响应消息格式
         language: javascript
 right_code_blocks:
     -
-        code_block: '{"id":"123", "code": 0, "msg": "success"}   '
-        title: Response-成功
+        code_block: '{"id":"123", "code": 0, "msg": "success"}'
+        title: 响应-成功
         language: json
     -
         code_block: '{"id":"123", "code": 401, "msg": "token expire"}'
-        title: response-token失效
+        title: 响应-token失效
         language: json
 ---

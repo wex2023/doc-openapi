@@ -1,8 +1,8 @@
 ---
-title: 所有ticker
+title: 所有行情
 position_number: 12
 type:
-description: 
+description:
 
 parameters:
     -
@@ -15,22 +15,22 @@ parameters:
 content_markdown: |-
     **请求**
 
-    语法: tickers
-    
-    速率: 1000ms，(只推送有变化部分)
+    格式: tickers
+
+    频率: 1000ms（只推送有变化部分）
 left_code_blocks:
     -
         code_block:
-        title: Python
-        language: python
+        title: 请求
+        language: json
 right_code_blocks:
     -
         code_block: |-
             {
-                "topic": "tickers", 
-                "event": "tickers", 
+                "topic": "tickers",
+                "event": "tickers",
                 "data": [ ]  // 同 ticker
             }
-        title: Response
+        title: 响应
         language: json
 ---

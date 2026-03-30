@@ -2,7 +2,6 @@
 title: Get a list of currency assets
 position_number: 3
 type: get
-split: -------------------------------------
 description: /v4/balances
 parameters:
     -
@@ -10,12 +9,12 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: 'List of currencies, comma separated,eg:  usdt,btc'
+        description: "List of currencies, comma separated, e.g. usdt,btc"
         ranges:
 content_markdown: >-
-    #### **Limit Flow Rules**
+    #### **Limit Rule**
 
-    10/s/apikey
+    10 requests/second/apikey
 left_code_blocks:
     -
         code_block:
@@ -36,14 +35,14 @@ right_code_blocks:
                   ],
                   "result": {
                     "totalBtcAmount": 0,
-                    "assets": [    
-                      {        
-                        "currency": "string",
-                        "currencyId": 0,
-                        "frozenAmount": 0,
-                        "availableAmount": 0,
-                        "totalAmount": 0,
-                        "convertBtcAmount": 0
+                    "assets": [
+                      {
+                        "currency": "string",        // currency
+                        "currencyId": 0,             // currency ID
+                        "frozenAmount": 0,           // frozen amount
+                        "availableAmount": 0,        // available amount
+                        "totalAmount": 0,            // total amount
+                        "convertBtcAmount": 0        // converted BTC amount
                       }
                     ]
                   }
@@ -51,4 +50,3 @@ right_code_blocks:
         title: Response
         language: json
 ---
-

@@ -1,8 +1,7 @@
 ---
 title: Get K-line data
-position_number: 4
+position_number: 5
 type: get
-split: -------------------------------------
 description: /v4/public/kline
 parameters:
     -
@@ -10,7 +9,7 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: trading pair  eg:btc_usdt
+        description: trading pair eg:btc_usdt
         ranges:
     -
         name: interval
@@ -44,8 +43,8 @@ parameters:
         ranges: 1~1000
 content_markdown: >-
     #### **Limit Flow Rules**
-    
-    100/s/ip
+
+    10/s/ip
 
 left_code_blocks:
     -

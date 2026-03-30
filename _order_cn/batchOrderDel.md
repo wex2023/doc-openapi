@@ -17,10 +17,11 @@ parameters:
         type: array
         mandatory: true
         default:
-        description: 集合[6216559590087220004,6216559590087220005]
+        description: '订单 ID 列表 [6216559590087220004, 6216559590087220005]'
         ranges:
+content_markdown: |-
+    注意：参数需放置在请求体中，以 JSON 格式传递。
 
-content_markdown: 注意：参数以json形式放在body中
 left_code_blocks:
     -
         code_block: |-
@@ -48,4 +49,3 @@ right_code_blocks:
         title: Response
         language: json
 ---
-

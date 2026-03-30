@@ -5,31 +5,50 @@ parameters:
 - name:
 content:
 content_markdown: >-
-    Since WEX needs to provide some open interfaces for third-party platforms，therefore, the issue of data security needs to be considered. Such as whether the data has been tampered with, whether the data is outdated, whether the data can be submitted repeatedly, and the access frequency of the interface, and whether data has been tampered with is the most important issue.
+    Since WEX needs to provide some open interfaces for third-party platforms, the issue of **data security** needs to be considered.
 
 
-    1. Please apply for appkey and secretkey in the user center first, each user's appkey and secretkey are different.
-    
+    Such as:
 
-    2. Add timestamp, its value should be the unix timestamp (milliseconds) of the time when the request is sent, and the time of the data is calculated based on this value.
-    
+    - Whether the data has been tampered with
 
-    3. Add signature, its value is obtained by a certain rule of signature algorithm.
-    
+    - Whether the data is outdated
 
-    4. Add recvwindow (defining the valid time of the request), the valid time is currently relatively simple and uniformly fixed at a certain value.
-    
+    - Whether the data can be submitted repeatedly
 
-      When a request is received by the server, the timestamp in the request is checked to ensure it falls between 2 to 60 seconds. Any request with a timestamp older than 5,000 milliseconds is considered invalid. 
-      The time window value can be set using the optional parameter: "recvWindow". Additionally, if the server determines that the client's timestamp is more than one second ahead of the server, the request will also be invalid. 
-      Online conditions are not always 100% reliable in terms of the timeliness of trades, resulting in varying levels of latency between your local program and the WEX server. This is why we provide the "recvWindow" parameter - if you engage in high-frequency trading and require stricter transaction timeliness, you can adjust the "recvWindow" parameter to better meet your needs.
-      
-      Recvwindow longer than 5 seconds is not recommended.
-      
+    - The access frequency of the interface
 
-    5、Added algorithm (signature method/algorithm), the user calculates the signature according to the protocol of the hash, and HmacSHA256 is recommended. For those protocols that are supported, see the table below.
 
-        HmacMD5、HmacSHA1、HmacSHA224、HmacSHA256(recommended)、HmacSHA384、HmacSHA512
+    Among these, **whether data has been tampered with is the most important issue**.
+
+
+    **Steps:**
+
+
+    1. **Appkey & Secretkey** Apply for `appkey` and `secretkey` in the user center first, each user's keys are different.
+
+
+    2. **Timestamp** Add `timestamp`.
+    Its value should be the **unix timestamp (milliseconds)** of the time when the request is sent.
+    The time of the data is calculated based on this value.
+
+
+    3. **Signature** Add `signature`, its value is obtained by the signature algorithm rule.
+
+
+    4. **RecvWindow** Add `recvwindow` (defines the valid time of the request).
+    Valid time is fixed at a certain value.
+    When a request is received, the server checks if: serverTime - timestamp < recvwindow.
+    Any request older than **5000 ms** is invalid.
+    If the client's timestamp is more than **1 second ahead of server time**, the request is invalid.
+    **Note:** Online conditions are not always 100% reliable. That's why we provide the `recvWindow` parameter.
+    For high-frequency trading, adjust `recvWindow` to meet timeliness needs.
+    RecvWindow longer than **5 seconds** is **not recommended**.
+
+
+    5. **Algorithm** Add `algorithms` (signature method).
+    Recommended: `HmacSHA256`.
+    Supported algorithms: HmacMD5, HmacSHA1, HmacSHA224, **HmacSHA256 (recommended)**, HmacSHA384, HmacSHA512
 examples:
   -
     name: validate-appkey
@@ -49,27 +68,25 @@ examples:
   -
     name: validate-recvwindow
     mandatory: true
-    example: 5000(millisecond)
+    example: 5000 (millisecond)
     description:
   -
     name: validate-algorithms
     mandatory: true
     example: HmacSHA256
-    description: HmacMD5、HmacSHA1、HmacSHA224、HmacSHA256、HmacSHA384、HmacSHA512，The default is：HmacSHA256
+    description: HmacMD5, HmacSHA1, HmacSHA224, HmacSHA256, HmacSHA384, HmacSHA512. Default is HmacSHA256
   -
     name: validate-signversion
     mandatory: false
     example: 1.0
-    description: reserved, signed version number
+    description: Reserved, signed version number
 
 left_code_blocks:
 - code_block:
   title:
   language:
-  right_code_blocks:
+right_code_blocks:
 - code_block:
   title:
   language:
 ---
-
-

@@ -9,16 +9,19 @@ parameters:
         type: number
         mandatory: false
         default:
-        description: 
+        description: Order ID
         ranges:
     -
         name: clientOrderId
         type: string
         mandatory: false
         default:
-        description: 
+        description: Client order ID
         ranges:
-content_markdown:
+content_markdown: >-
+    #### **Limit Flow Rules**
+
+    50/s/apikey
 left_code_blocks:
     -
         code_block: |-
@@ -42,27 +45,27 @@ right_code_blocks:
                         {}
                       ],
                       "result": {
-                        "symbol": "BTC_USDT",   
-                        "orderId": "6216559590087220004",  
-                        "clientOrderId": "16559590087220001",  
-                        "baseCurrency": "string",   
-                        "quoteCurrency": "string",   
-                        "side": "BUY",                      //order side:BUY,SELL
-                        "type": "LIMIT",                    //order type  LIMIT,MARKET 
-                        "timeInForce": "GTC",               //effective way:GTC,IOC,FOK,GTX
-                        "price": "40000",   
-                        "origQty": "2",                     //original quantity
-                        "origQuoteQty": "48000",            //original amount
-                        "executedQty": "1.2",               //executed quantity
-                        "leavingQty": "string",             //The quantity to be executed (if the order is cancelled or the order is rejected, the value is 0)
-                        "tradeBase": "2",                   //transaction quantity
-                        "tradeQuote": "48000",              //transaction amount
-                        "avgPrice": "42350",                //average transaction price
-                        "fee": "string",                    //handling fee
-                        "feeCurrency": "string",   
-                        "state": "NEW",                     //order stat NEW,PARTIALLY_FILLED,FILLED,CANCELED,REJECTED,EXPIRED
-                        "time": 1655958915583,              //order time
-                        "updatedTime": 1655958915583  
+                        "symbol": "BTC_USDT",
+                        "orderId": "6216559590087220004",
+                        "clientOrderId": "16559590087220001",
+                        "baseCurrency": "string",
+                        "quoteCurrency": "string",
+                        "side": "BUY",                      //Order side: BUY, SELL
+                        "type": "LIMIT",                    //Order type: LIMIT, MARKET
+                        "timeInForce": "GTC",               //Effective way: GTC, IOC, FOK, GTX
+                        "price": "40000",
+                        "origQty": "2",                     //Original quantity
+                        "origQuoteQty": "48000",            //Original amount
+                        "executedQty": "1.2",               //Executed quantity
+                        "leavingQty": "string",             //Remaining quantity (0 if cancelled or rejected)
+                        "tradeBase": "2",                   //Transaction quantity
+                        "tradeQuote": "48000",              //Transaction amount
+                        "avgPrice": "42350",                //Average transaction price
+                        "fee": "string",                    //Handling fee
+                        "feeCurrency": "string",
+                        "state": "NEW",                     //Order state
+                        "time": 1655958915583,              //Order creation time
+                        "updatedTime": 1655958915583        //Last updated time
                       }
                     }
         title: Response

@@ -15,7 +15,7 @@ content_markdown: >-
     | FILLED | The order has been completed. |
     | CANCELED | The order has been canceled by the user. |
     | REJECTED | The order was not accepted by the engine and not processed. |
-    | EXPIRED | The order has expired (e.g. Order canceled due to timeout or canceled due to premium) |  
+    | EXPIRED | The order has expired (e.g. Order canceled due to timeout or canceled due to premium) |
 
   #### **<span id="orderType">Order type</span>**
 
@@ -33,14 +33,15 @@ content_markdown: >-
     | DELISTED | The symbol has been delisted |
 
   #### **<span id="timeInForces">Time in force</span>**
+
     This sets how long an order will be active before expiration.
 
     | TimeInForces | Description |
     | --- | --- |
     | GTC | It remains valid until the transaction is concluded. |
-    | IOC | ancel the part that cannot be transacted immediately (taking orders) |
+    | IOC | Cancel the part that cannot be transacted immediately (taking orders) |
     | FOK | Cancellation if all transactions cannot be completed immediately |
-    | GTX | Revoke if unable to become a pending party |
+    | GTX | Only pending orders, the triggering of transaction conditions will be cancelled immediately |
 
   #### **<span id="depositWithdrawStatus">Deposit/Withdraw status</span>**
 
@@ -51,7 +52,7 @@ content_markdown: >-
     | REVIEW | The withdrawal amount has been frozen and is pending review. |
     | AUDITED | The withdraw has been reviewed and is ready to on-chaining. |
     | AUDITED_AGAIN | Reexamine |
-    | PENDING | The deposit or withdraw is already on-chaining.  |
+    | PENDING | The deposit or withdraw is already on-chaining. |
     | SUCCESS | The deposit or withdraw is success. |
     | FAIL | The deposit or withdraw failed. |
     | CANCEL | The deposit or withdraw has been canceled by the user. |
@@ -61,21 +62,19 @@ content_markdown: >-
 
     | Status | Description |
     | --- | --- |
-    | SPOT | spot account |
+    | SPOT | Spot account |
     | LEVER | Leverage account |
     | FINANCE | Financial account |
-    | FUTURES_U | USDT-M futures account  |
+    | FUTURES_U | USDT-M futures account |
     | FUTURES_C | COIN-M futures account |
-  
+
 
 left_code_blocks:
 - code_block:
   title:
   language:
-  right_code_blocks:
+right_code_blocks:
 - code_block:
   title:
   language:
 ---
-
-

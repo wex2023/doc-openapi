@@ -5,77 +5,76 @@ parameters:
 - name:
 content:
 content_markdown: >-
-  #### **<span id="orderStatusCn">订单状态码及含义</span>**
+  #### **<span id="orderStatusCn">订单状态</span>**
 
 
-    | State | 说明 |
+    | 状态 | 描述 |
     | --- | --- |
-    | NEW | 新建 |
-    | PARTIALLY_FILLED | 部分成交 |
-    | FILLED | 全部成交 |
-    | CANCELED | 用户撤单 |
-    | REJECTED | 下单失败 |
-    | EXPIRED | 过期(time_in_force撤单或溢价撤单) |
+    | NEW | 订单已被引擎接受。 |
+    | PARTIALLY_FILLED | 订单已部分成交。 |
+    | FILLED | 订单已完全成交。 |
+    | CANCELED | 订单已被用户取消。 |
+    | REJECTED | 订单未被引擎接受且未处理。 |
+    | EXPIRED | 订单已过期（例如：因超时取消或因溢价取消） |
 
-  #### **<span id="orderTypeCn">订单类型及含义</span>**
+  #### **<span id="orderTypeCn">订单类型</span>**
 
-    | Type | 说明 |
+    | 类型 | 描述 |
     | --- | --- |
     | LIMIT | 限价单 |
     | MARKET | 市价单 |
 
-  #### **<span id="symbolStatuCn">交易对状态及含义</span>**
+  #### **<span id="symbolStatuCn">交易对状态</span>**
 
-    | State | 说明 |
+    | 状态 | 描述 |
     | --- | --- |
-    | ONLINE | 上线的 |
-    | OFFLINE | 下线的 |
-    | DELISTED | 退市的 |
+    | ONLINE | 交易对已上线 |
+    | OFFLINE | 交易对已下线 |
+    | DELISTED | 交易对已退市 |
 
-  #### **<span id="timeInForcesCn">有效方式及含义</span>**
-    这里定义了订单多久能够失效
+  #### **<span id="timeInForcesCn">有效时间</span>**
 
-    | TimeInForces | 说明 |
+    设置订单在过期前的有效时长。
+
+    | 有效时间类型 | 描述 |
     | --- | --- |
-    | GTC | 成交为止,一直有效 |
-    | IOC | 无法立即成交(吃单)的部分就撤销 |
-    | FOK | 无法全部立即成交就撤销 |
-    | GTX | 无法成为挂单方就撤销 |
+    | GTC | 成交为止：订单一直有效直到成交。 |
+    | IOC | 立即成交或取消：无法立即成交的部分将被取消（吃单） |
+    | FOK | 全部成交或取消：如果不能全部立即成交则取消 |
+    | GTX | 只做挂单：只挂单，如触发成交条件将立即取消 |
 
-  #### **<span id="depositWithdrawStatusCn">充值/提现记录状态码及含义</span>**
+  #### **<span id="depositWithdrawStatusCn">充值/提现状态</span>**
 
 
-    | Status | 说明 |
+    | 状态 | 描述 |
     | --- | --- |
-    | SUBMIT | 提现: 未冻结 |
-    | REVIEW | 提现: 已冻结,待审核 |
-    | AUDITED | 提现: 已审核,发送钱包,待上链 |
-    | AUDITED_AGAIN | 复审中 |
-    | PENDING | 充值/提现: 已上链 |
-    | SUCCESS | 完成 |
-    | FAIL | 失败 |
-    | CANCEL | 已取消 |
+    | SUBMIT | 提现金额未冻结。 |
+    | REVIEW | 提现金额已冻结，待审核。 |
+    | AUDITED | 提现已审核，准备上链。 |
+    | AUDITED_AGAIN | 重新审核 |
+    | PENDING | 充值或提现正在上链中。 |
+    | SUCCESS | 充值或提现成功。 |
+    | FAIL | 充值或提现失败。 |
+    | CANCEL | 充值或提现已被用户取消。 |
 
-  #### **<span id="bizTypeCn">BizType</span>**
+  #### **<span id="bizTypeCn">业务类型</span>**
 
 
-    | Status | Description |
+    | 状态 | 描述 |
     | --- | --- |
-    | SPOT | 现货 |
-    | LEVER | 杠杠 |
-    | FINANCE | 理财 |
-    | FUTURES_U | 合约u本位  |
-    | FUTURES_C | 合约币本位 |
-  
+    | SPOT | 现货账户 |
+    | LEVER | 杠杆账户 |
+    | FINANCE | 理财账户 |
+    | FUTURES_U | USDT 本位合约账户 |
+    | FUTURES_C | 币本位合约账户 |
+
 
 left_code_blocks:
 - code_block:
   title:
   language:
-  right_code_blocks:
+right_code_blocks:
 - code_block:
   title:
   language:
 ---
-
-

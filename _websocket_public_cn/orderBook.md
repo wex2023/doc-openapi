@@ -1,9 +1,9 @@
 ---
-title: Orderbook 维护
+title: 订单簿管理
 position_number: 7
 split: -------------------------------------
 type:
-description: 
+description:
 
 parameters:
     -
@@ -14,44 +14,46 @@ parameters:
         description:
         ranges:
 content_markdown: |-
-        **如何正确在本地维护一个orderbook副本**
-        
-
-        1.订阅 wss://stream.wexex.io/public，depth_update@btc_usdt
+    **如何正确管理本地订单簿**
 
 
-        2.开始缓存收到的更新。同一个价位，后收到的更新覆盖前面的。
+    1.建立到 wss://stream.xt.com/public 的连接，例如 depth\_update@btc\_usdt。
 
 
-        3.访问Rest接口 https://sapi.wexex.io/v4/public/depth?symbol=btc_usdt&limit=500 获得一个500档的深度快照
+    2.缓存从数据流接收到的事件。
 
 
-        4.将目前缓存到的信息中i <= 步骤3中获取到的快照中的lastUpdateId的部分丢弃(丢弃更早的信息，已经过期)。
+    3.从 https://sapi.xt.com/v4/public/depth?symbol=btc\_usdt&limit=500 获取深度快照。
 
 
-        5.将深度快照中的内容更新到本地orderbook副本中，并从websocket接收到的第一个fi <= lastUpdateId+1 且 i >= lastUpdateId+1 的event开始继续更新本地副本。
+    4.丢弃快照中 i <= lastUpdateId 的所有事件。
 
 
-        6.每一个新event的fi应该恰好等于上一个event的i+1，否则可能出现了丢包，请从step3重新进行初始化。
+    5.第一个处理的事件应满足 fi <= lastUpdateId+1 且 i >= lastUpdateId+1。
 
 
-        7.每一个event中的挂单量代表这个价格目前的挂单量绝对值，而不是相对变化。
+    6.监听数据流时，每个新事件的 fi 应等于前一个事件的 i+1。
 
 
-        8.如果某个价格对应的挂单量为0，表示该价位的挂单已经撤单或者被吃，应该移除这个价位。
+    7.每个事件中的数据是价格档位的绝对数量。
 
 
-        注意: 因为深度快照对价格档位数量有限制，初始快照之外的价格档位并且没有数量变化的价格档位不会出现在增量深度的更新信息内。因此，即使应用来自增量深度的所有更新，这些价格档位也不会在本地 order book 中可见，
-        所以本地的 order book 与真实的 order book 可能会有一些差异。 不过对于大多数用例，500 的深度限制足以有效地了解市场和交易。
-            
+    8.如果数量为 0，则移除该价格档位。
+
+
+    9.接收到移除本地订单簿中不存在的价格档位的事件是正常现象。
+
+
+    **注意：** 由于深度快照对价格档位数量有限制，初始快照之外且数量未发生变化的价格档位不会在增量深度流中更新。因此，即使正确应用增量深度流的所有更新，这些价格档位也不会在本地订单簿中显示。这可能导致本地订单簿与实际订单簿存在细微差异。不过，对于大多数使用场景，500 档深度限制足以理解市场并进行有效交易。
+
 left_code_blocks:
     -
         code_block:
-        title: Python
-        language: python
+        title: 请求
+        language: json
 right_code_blocks:
     -
         code_block:
-        title: Response
+        title: 响应
         language: json
 ---

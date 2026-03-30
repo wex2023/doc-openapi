@@ -15,7 +15,7 @@ parameters:
     -
         name: bizType
         type: string
-        mandatory: false
+        mandatory: true
         default:
         description: "SPOT, LEVER"
         ranges:
@@ -24,14 +24,14 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: BUY,SELL
+        description: BUY, SELL
         ranges:
 content_markdown: >-
     #### **Limit Flow Rules**
 
     10/s/apikey
     <br>
-    Note: The parameters should be placed in the request body in the form of json
+    Note: The parameters should be placed in the request body in the form of JSON.
 left_code_blocks:
     -
         code_block:

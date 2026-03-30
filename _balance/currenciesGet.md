@@ -9,7 +9,7 @@ parameters:
         type: string
         mandatory: false
         default:
-        description:
+        description: No request parameters required
         ranges:
 content_markdown:
 left_code_blocks:
@@ -32,21 +32,20 @@ right_code_blocks:
               ],
               "result": [
                 {
-                   "id": 11,                //currency id
-                  "currency": "usdt",       //currency name
-                  "fullName": "usdt",       //currency full name
-                  "logo": null,             //currency logo
-                  "cmcLink": null,          //cmc link
-                  "weight": 100,    
-                  "maxPrecision": 6,  
-                  "depositStatus": 1,       //Recharge status(0 close 1 open)
-                  "withdrawStatus": 1,      //Withdrawal status(0 close 1 open)
-                  "convertEnabled": 1,      //Small asset exchange switch[0=close;1=open]
-                  "transferEnabled": 1      //swipe switch[0=close;1=open]
+                  "id": 11,                // currency id
+                  "currency": "usdt",       // currency symbol
+                  "fullName": "usdt",       // full currency name
+                  "logo": null,             // currency logo
+                  "cmcLink": null,          // CoinMarketCap link
+                  "weight": 100,            // weight / ranking
+                  "maxPrecision": 6,        // maximum precision
+                  "depositStatus": 1,       // deposit status (0 closed, 1 open)
+                  "withdrawStatus": 1,      // withdrawal status (0 closed, 1 open)
+                  "convertEnabled": 1,      // small asset conversion (0 closed, 1 open)
+                  "transferEnabled": 1      // transfer switch (0 closed, 1 open)
                 }
               ]
             }
         title: Response
         language: json
 ---
-

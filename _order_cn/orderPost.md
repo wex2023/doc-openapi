@@ -1,5 +1,5 @@
 ---
-title: 单笔下单
+title: 提交订单
 position_number: 2
 type: post
 description: /v4/order
@@ -16,21 +16,21 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: 客户端ID正则：^[a-zA-Z0-9_]{4,32}$
+        description: '自定义订单号，正则: ^[a-zA-Z0-9_]{4,22}$'
         ranges:
     -
         name: side
         type: string
         mandatory: true
         default:
-        description: "买卖方向 \_BUY-买,SELL-卖"
+        description: "订单方向 BUY, SELL"
         ranges:
     -
         name: type
         type: string
         mandatory: true
         default:
-        description: "订单类型 \_LIMIT-现价,MARKET-市价\_"
+        description: "订单类型 LIMIT, MARKET"
         ranges:
     -
         name: timeInForce
@@ -44,34 +44,44 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: >-
-            业务类型  SPOT-现货, LEVER-杠杆
+        description: "业务类型 SPOT, LEVER"
         ranges:
     -
         name: price
         type: number
         mandatory: false
         default:
-        description: 价格。现价必填; 市价不填
+        description: 价格。当为 LIMIT 订单时必填；MARKET 订单不需要填写
         ranges:
     -
         name: quantity
         type: number
         mandatory: false
         default:
-        description: 数量。现价必填；市价按数量下单时必填
+        description: 数量。当为 LIMIT 订单或按数量市价单时必填
         ranges:
     -
         name: quoteQty
         type: number
         mandatory: false
         default:
-        description: 金额。现价不填；市价按金额下单时必填
+        description: 金额。当为 LIMIT 订单或按金额市价单时必填
+        ranges:
+    -
+        name: nftId
+        type: string
+        mandatory: false
+        default:
+        description: NFT ID
         ranges:
 content_markdown: >-
+    #### 备注
+
+    创建买入市价单时，quantity 必须为空，quoteQty 必填。创建卖出市价单时，quoteQty 必须为空，quantity 必填。
+
     #### **限流规则**
 
-    50/s/apikey
+    20/s/apikey
 
 left_code_blocks:
     -
@@ -96,7 +106,8 @@ right_code_blocks:
                     {}
                   ],
                   "result": {
-                    "orderId": "6216559590087220004"   //订单ID
+                    "orderId": "6216559590087220004",
+                    "ip": "127.0.0.1"
                   }
                 }
         title: Response

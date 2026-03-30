@@ -2,7 +2,7 @@
 title: 订阅参数
 position_number: 6
 type:
-description: 
+description:
 
 parameters:
     -
@@ -13,17 +13,21 @@ parameters:
         description:
         ranges:
 content_markdown: |-
-    **结构**
+    **格式**
 
     \{topic\}@\{arg\},\{arg\},...
 left_code_blocks:
     -
         code_block:
-        title: Python
-        language: python
+        title: 请求
+        language: json
 right_code_blocks:
     -
-        code_block:
-        title: Response
+        code_block: |-
+            {
+                "code": 0,
+                "msg": "success"
+            }
+        title: 响应
         language: json
 ---

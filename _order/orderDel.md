@@ -1,5 +1,5 @@
 ---
-title: Cancell order
+title: Cancel order
 position_number: 3
 type: delete
 split: -------------------------------------
@@ -10,12 +10,12 @@ parameters:
         type: number
         mandatory: true
         default:
-        description: 
+        description:
         ranges:
 content_markdown: >-
     #### **Limit Flow Rules**
 
-    100/s/apikey
+    N/A
 left_code_blocks:
     -
         code_block: |-

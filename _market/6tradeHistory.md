@@ -1,7 +1,6 @@
 ---
 title: Query historical transaction list
-position_number: 6
-split: -------------------------------------
+position_number: 7
 type: get
 description: /v4/public/trade/history
 parameters:
@@ -17,34 +16,30 @@ parameters:
         type: number
         mandatory: false
         default: '200'
-        description: 
-        ranges: 1，1000
+        description:
+        ranges: 1~1000
     -
         name: direction
         type: string
         mandatory: true
         default:
-        description: 'query direction'
-        ranges: 'PREV-previous page,NEXT-next page'
+        description: query direction
+        ranges: 'PREV - previous page, NEXT - next page'
     -
         name: fromId
         type: number
         mandatory: false
         default:
-        description: 'Start ID，eg: 6216559590087220004'
+        description: 'Start ID, e.g. 6216559590087220004'
         ranges:
 content_markdown: >-
     #### **Limit Flow Rules**
-    
-    100/s/ip
+
+    10/s/ip
 
 left_code_blocks:
     -
-        code_block: |-
-            public String tradeHistory(){
-
-
-            }
+        code_block:
         title: Java
         language: java
     -
@@ -63,11 +58,11 @@ right_code_blocks:
                   "result": [
                     {
                       "i": 0,           //ID
-                      "t": 0,           //transaction time
-                      "p": "string",    //transaction price
-                      "q": "string",    //transaction quantity
-                      "v": "string",    //transaction volume
-                      "b": true         //whether is buyerMaker or not
+                      "t": 0,           //trade time
+                      "p": "string",    //trade price
+                      "q": "string",    //trade quantity
+                      "v": "string",    //trade amount
+                      "b": true         //whether the buyer is the maker
                     }
                   ]
                 }

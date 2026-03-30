@@ -1,8 +1,8 @@
 ---
-title: Base address
+title: General WSS information
 position_number: 1
 type:
-description: 
+description:
 
 parameters:
     -
@@ -12,12 +12,12 @@ parameters:
         default:
         description:
         ranges:
-content_markdown: '**wss://stream.wexex.io/private**'
+content_markdown: '**wss://stream.xt.com/private**'
 left_code_blocks:
     -
         code_block:
-        title: Python
-        language: python
+        title: Request
+        language: json
 right_code_blocks:
     -
         code_block:

@@ -1,5 +1,5 @@
 ---
-title: 撤销当前挂单
+title: 取消当前挂单
 position_number: 8
 type: delete
 split: -------------------------------------
@@ -10,29 +10,28 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: 交易对，不传代表所有
+        description: 交易对，不填则表示全部
         ranges:
     -
         name: bizType
         type: string
-        mandatory: false
+        mandatory: true
         default:
-        description: >-
-            业务类型  SPOT-现货, LEVER-杠杆
+        description: "业务类型 SPOT, LEVER"
         ranges:
     -
         name: side
         type: string
         mandatory: false
         default:
-        description: BUY-买,SELL-卖
+        description: "订单方向 BUY, SELL"
         ranges:
 content_markdown: >-
-    #### **限流规则**
+    #### **限频规则**
 
-    10/s/apikey
+    10次/秒/每apikey
     <br>
-    注意：参数以json形式放在body中
+    注意：参数需以 JSON 格式放置于请求体中。
 left_code_blocks:
     -
         code_block:

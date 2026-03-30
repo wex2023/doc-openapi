@@ -1,5 +1,5 @@
 ---
-title: 批量获取
+title: 批量查询
 position_number: 4
 type: get
 description: /v4/batch-order
@@ -9,9 +9,10 @@ parameters:
         type: string
         mandatory: true
         default:
-        description: '订单ID集合，逗号分割 eg:  6216559590087220004,6216559590087220004'
+        description: '订单 ID 列表，例如: 6216559590087220004, 6216559590087220005'
         ranges:
-content_markdown: reponse 字段信息参考单笔订单获取接口
+content_markdown: >-
+    返回字段信息与 **查询单个订单接口** 相同。
 left_code_blocks:
     -
         code_block: |-
@@ -56,6 +57,7 @@ right_code_blocks:
                           "feeCurrency": "string",
                           "state": "NEW",
                           "time": 1655958915583,
+                          "ip": "127.0.0.1",
                           "updatedTime": 1655958915583
                         }
                       ]

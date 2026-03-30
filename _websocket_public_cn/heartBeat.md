@@ -2,7 +2,7 @@
 title: 心跳
 position_number: 5
 type:
-description: 
+description:
 
 parameters:
     -
@@ -12,15 +12,19 @@ parameters:
         default:
         description:
         ranges:
-content_markdown: 客户端每个链接需要定期发送ping消息，服务端会回复pong的消息，服务端在1分钟内没有收到客户端的ping消息，会主动断开链接
+content_markdown: >-
+    客户端的每个连接需要定期发送文本 **"ping"**，服务器将回复 **"pong"**。
+    如果服务器在 1 分钟内没有收到客户端的 ping 消息，将主动断开连接。
 left_code_blocks:
     -
-        code_block:
-        title: Python
-        language: python
+        code_block: |-
+            "ping"
+        title: 请求
+        language: json
 right_code_blocks:
     -
-        code_block:
-        title: Response
+        code_block: |-
+            "pong"
+        title: 响应
         language: json
 ---

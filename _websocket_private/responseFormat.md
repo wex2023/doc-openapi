@@ -2,7 +2,7 @@
 title: Response message format
 position_number: 3
 type:
-description: 
+description:
 
 parameters:
     -
@@ -17,11 +17,11 @@ left_code_blocks:
     -
         code_block: |-
             {
-                "id": "{id}", //call back ID
-                "code": 1,     //result 0=success;1=fail;2=listenKey invalid
+                "id": "{id}",   //call back ID
+                "code": 1,      //result 0=success;1=fail;2=listenKey invalid
                 "msg": ""
             }
-        title: format
+        title: Format
         language: javascript
 right_code_blocks:
     -

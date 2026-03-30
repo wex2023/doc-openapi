@@ -37,6 +37,10 @@
 			<div class="sidebar_en">{% include sidebar_en.html %}</div>
 			<div class="sidebar_cn">{% include sidebar_cn.html %}</div>
 		</div>
+		<div id="futures_sidebar">
+			<div class="sidebar_en">{% include futures_sidebar_en.html %}</div>
+			<div class="sidebar_cn">{% include futures_sidebar_cn.html %}</div>
+		</div>
 	</header>
 
 		<div class="main">
@@ -46,9 +50,11 @@
 			</div>
 			<div class="trade-type-select" id="trade_type_en">
 				<a style="cursor:pointer;" class="active-type show_spot" >Spot</a>
+				<a style="cursor:pointer;" class="show_futures" >Futures</a>
 			</div>
 			<div class="trade-type-select" id="trade_type_cn">
 				<a style="cursor:pointer;" class="active-type show_spot">现货</a>
+				<a style="cursor:pointer;" class="show_futures">合约</a>
 			</div>
       <div id="content" style="margin-top: 40px;">
 			    {{ content }}
@@ -64,7 +70,7 @@
 			//默认展示模块
 			var model = "spot";
 			//所有模块数组
-			var models = new Array("spot");
+			var models = new Array("spot", "futures");
 
 			var query = window.location.toString();
 			//有锚点定位

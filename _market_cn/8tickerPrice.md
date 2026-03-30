@@ -1,6 +1,6 @@
 ---
-title: 获取最新价格ticker
-position_number: 8
+title: 获取最新价格行情
+position_number: 9
 type: get
 description: /v4/public/ticker/price
 parameters:
@@ -9,39 +9,35 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: 交易对  eg:btc_usdt
+        description: 交易对 例如：btc_usdt
         ranges:
     -
         name: symbols
         type: array
         mandatory: false
         default:
-        description: '交易对集合，优先级高于symbol。 eg: btc_usdt,eth_usdt'
+        description: '交易对集合，优先级高于symbol。例如：btc_usdt,eth_usdt'
         ranges:
     -
         name: tags
         type: string
         mandatory: false
         default:
-        description: '标签集合,逗号分割，当前仅支持 spot'
+        description: '标签集合，用逗号分隔，目前仅支持 spot'
         ranges:
 content_markdown: >-
     #### **限流规则**
 
 
-    1\.单个交易对：100/s/ip
+    1\.单个交易对：10次/秒/IP
 
 
-    2\.多个交易对：10/s/ip
+    2\.多个交易对：10次/秒/IP
 
 
 left_code_blocks:
     -
-        code_block: |-
-            public String price(){
-
-
-            }
+        code_block:
         title: Java
         language: java
     -
@@ -57,10 +53,10 @@ right_code_blocks:
               "ma": [],
               "result": [
                 {
-                  "s": "btc_usdt",     //交易对(symbol)
-                  "t": 1661856036925   //时间(time)
-                  "p": "9000.0000",    //价格(price)
-                  }
+                  "s": "btc_usdt",     //交易对
+                  "t": 1661856036925,  //时间
+                  "p": "9000.0000"     //价格
+                }
               ]
             }
         title: Response

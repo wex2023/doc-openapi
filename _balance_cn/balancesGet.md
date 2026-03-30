@@ -2,7 +2,6 @@
 title: 获取币种资产列表
 position_number: 3
 type: get
-split: -------------------------------------
 description: /v4/balances
 parameters:
     -
@@ -10,12 +9,12 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: '币种列表,逗号分隔，eg:  usdt,btc'
+        description: "币种列表，逗号分隔，例如：usdt,btc"
         ranges:
 content_markdown: >-
     #### **限流规则**
 
-    10/s/apikey
+    10次/秒/apikey
 left_code_blocks:
     -
         code_block:
@@ -36,14 +35,14 @@ right_code_blocks:
                   ],
                   "result": {
                     "totalBtcAmount": 0,
-                    "assets": [    //参数内容参考获取单个币种资产接口
-                      {        
-                        "currency": "string",
-                        "currencyId": 0,
-                        "frozenAmount": 0,
-                        "availableAmount": 0,
-                        "totalAmount": 0,
-                        "convertBtcAmount": 0
+                    "assets": [
+                      {
+                        "currency": "string",        // 币种
+                        "currencyId": 0,             // 币种ID
+                        "frozenAmount": 0,           // 冻结数量
+                        "availableAmount": 0,        // 可用数量
+                        "totalAmount": 0,            // 总数量
+                        "convertBtcAmount": 0        // 折算BTC数量
                       }
                     ]
                   }
@@ -51,4 +50,3 @@ right_code_blocks:
         title: Response
         language: json
 ---
-

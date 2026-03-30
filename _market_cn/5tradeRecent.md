@@ -1,6 +1,6 @@
 ---
-title: 查询近期成交列表
-position_number: 5
+title: 查询最近成交列表
+position_number: 6
 type: get
 description: /v4/public/trade/recent
 parameters:
@@ -16,20 +16,16 @@ parameters:
         type: number
         mandatory: false
         default: '200'
-        description: 数量
-        ranges: 1，1000
+        description:
+        ranges: 1~1000
 content_markdown: >-
     #### **限流规则**
 
-    100/s/ip
+    10次/秒/IP
 
 left_code_blocks:
     -
-        code_block: |-
-            public String tradeRecent(){
-
-
-            }
+        code_block:
         title: Java
         language: java
     -
@@ -48,11 +44,11 @@ right_code_blocks:
                   "result": [
                     {
                       "i": 0,           //ID
-                      "t": 0,           //成交时间(time)
-                      "p": "string",    //成交价(price)
-                      "q": "string",    //成交量(quantity)
-                      "v": "string",    //成交额(volume)
-                      "b": true         //方向(buyerMaker)
+                      "t": 0,           //成交时间
+                      "p": "string",    //成交价
+                      "q": "string",    //成交量
+                      "v": "string",    //成交额
+                      "b": true         //是否是buyerMaker
                     }
                   ]
                 }

@@ -9,27 +9,26 @@ parameters:
         type: string
         mandatory: false
         default:
-        description: 交易对，不传代表所有
+        description: 交易对，不填则表示全部
         ranges:
     -
         name: bizType
         type: string
         mandatory: false
         default:
-        description: >-
-            业务类型  SPOT-现货, LEVER-杠杆
+        description: "业务类型 SPOT, LEVER"
         ranges:
     -
         name: side
         type: string
         mandatory: false
         default:
-        description: BUY-买,SELL-卖
+        description: "订单方向 BUY, SELL"
         ranges:
 content_markdown: >-
-    #### **限流规则**
+    #### **限频规则**
 
-    10/s/apikey
+    10次/秒/每apikey
 left_code_blocks:
     -
         code_block:
@@ -48,7 +47,7 @@ right_code_blocks:
                   "ma": [
                     {}
                   ],
-                  "result": [      //字段信息参考单笔订单获取接口
+                  "result": [
                     {
                       "symbol": "BTC_USDT",
                       "orderId": "6216559590087220004",
@@ -70,6 +69,7 @@ right_code_blocks:
                       "feeCurrency": "string",
                       "state": "NEW",
                       "time": 1655958915583,
+                      "ip": "127.0.0.1",
                       "updatedTime": 1655958915583
                     }
                   ]

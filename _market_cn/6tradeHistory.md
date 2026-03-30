@@ -1,7 +1,6 @@
 ---
 title: 查询历史成交列表
-position_number: 6
-split: -------------------------------------
+position_number: 7
 type: get
 description: /v4/public/trade/history
 parameters:
@@ -17,34 +16,30 @@ parameters:
         type: number
         mandatory: false
         default: '200'
-        description: 数量
-        ranges: 1，1000
+        description:
+        ranges: 1~1000
     -
         name: direction
         type: string
         mandatory: true
         default:
-        description: '查询方向'
-        ranges: 'PREV-上一页,NEXT-下一页'
+        description: 查询方向
+        ranges: 'PREV - 上一页，NEXT - 下一页'
     -
         name: fromId
         type: number
         mandatory: false
         default:
-        description: '起始ID，eg: 6216559590087220004'
+        description: '起始 ID，例如 6216559590087220004'
         ranges:
 content_markdown: >-
     #### **限流规则**
 
-    100/s/ip
+    10次/秒/IP
 
 left_code_blocks:
     -
-        code_block: |-
-            public String tradeHistory(){
-
-
-            }
+        code_block:
         title: Java
         language: java
     -
@@ -63,11 +58,11 @@ right_code_blocks:
                   "result": [
                     {
                       "i": 0,           //ID
-                      "t": 0,           //成交时间(time)
-                      "p": "string",    //成交价(price)
-                      "q": "string",    //成交量(quantity)
-                      "v": "string",    //成交额(volume)
-                      "b": true         //方向(buyerMaker)
+                      "t": 0,           //成交时间
+                      "p": "string",    //成交价
+                      "q": "string",    //成交量
+                      "v": "string",    //成交额
+                      "b": true         //是否是buyerMaker
                     }
                   ]
                 }
