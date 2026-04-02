@@ -17,7 +17,7 @@ left_code_blocks:
     -
         code_block: |-
             public void getAggTickers() {
-                String text = HttpUtil.get("https://fapi.xt.com/future/market/v1/public/q/agg-tickers");
+                String text = HttpUtil.get("https://fapi.wexex.io/future/market/v1/public/q/agg-tickers");
                 System.out.println(text);
             }
         title: Java

@@ -17,7 +17,7 @@ left_code_blocks:
     -
         code_block: |-
             public void getAggTicker() {
-                String text = HttpUtil.get("https://fapi.xt.com/future/market/v1/public/q/agg-ticker?symbol=eth_usdt");
+                String text = HttpUtil.get("https://fapi.wexex.io/future/market/v1/public/q/agg-ticker?symbol=eth_usdt");
                 System.out.println(text);
             }
         title: Java

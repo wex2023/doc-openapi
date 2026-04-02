@@ -10,7 +10,7 @@ parameters:
         description:
         ranges:
 content_markdown: |-
-    **WebSocket 基础地址**: `wss://fstream.xt.com/ws/market`（公共频道，无需 listenKey）
+    **WebSocket 基础地址**: `wss://fstream.wexex.io/ws/market`（公共频道，无需 listenKey）
 
     &nbsp;
 

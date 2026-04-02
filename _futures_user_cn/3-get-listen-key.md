@@ -12,7 +12,13 @@ parameters:
         description:
         ranges:
 content_markdown: >-
-    #### **限流规则**\n\n\n    200次/秒/apikey\n\n\n    **说明:** 有效期为 8 小时
+    #### **限流规则**
+
+
+    200次/秒/apikey
+
+
+    **说明:** 有效期为 8 小时
 left_code_blocks:
     -
         code_block:

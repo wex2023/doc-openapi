@@ -8,9 +8,9 @@ content_markdown: >-
     #### 基础地址
 
 
-    - **USDT-M:** `https://fapi.xt.com` （适用于 U 本位合约）
+    - **USDT-M:** `https://fapi.wexex.io` （适用于 U 本位合约）
 
-    - **Coin-M:** `https://dapi.xt.com` （适用于币本位合约）
+    - **Coin-M:** `https://dapi.wexex.io` （适用于币本位合约）
 
 
     #### 网络建议

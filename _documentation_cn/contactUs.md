@@ -5,8 +5,8 @@ parameters:
 - name:
 content:
 content_markdown: |-
-    WEX API Telegram 群组：[WEX API Support Group](https://t.me/XT_api)
-    WEX API 工单：[创建 API 工单](https://xtsupport.zendesk.com/hc/zh-cn/requests/new?ticket_form_id=14988676408857)
+    WEX API Telegram 群组：[WEX API Support Group](https://t.me/WEX_api)
+    WEX API 工单：[创建 API 工单](https://wexsupport.zendesk.com/hc/zh-cn/requests/new?ticket_form_id=14988676408857)
 
     - 用于文档中未涵盖的 API 相关问题。
     - 用于做市商（MM）相关问题

@@ -12,7 +12,7 @@ parameters:
         default:
         description:
         ranges:
-content_markdown: '**wss://stream.xt.com/private**'
+content_markdown: '**wss://stream.wexex.io/private**'
 left_code_blocks:
     -
         code_block:

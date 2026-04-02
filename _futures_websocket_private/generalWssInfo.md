@@ -10,7 +10,7 @@ parameters:
         description:
         ranges:
 content_markdown: |-
-    **WebSocket Base URL**: `wss://fstream.xt.com/ws/user` (User private channel)
+    **WebSocket Base URL**: `wss://fstream.wexex.io/ws/user` (User private channel)
 
     &nbsp;
 
@@ -24,7 +24,7 @@ content_markdown: |-
 
     **Subscription Steps**
 
-    1. Call the API to obtain a **ListenKey**: `GET https://fapi.xt.com/future/user/v1/user/listen-key`
+    1. Call the API to obtain a **ListenKey**: `GET https://fapi.wexex.io/future/user/v1/user/listen-key`
     2. After WebSocket connection is established, subscribe to user events:
 
     &nbsp;

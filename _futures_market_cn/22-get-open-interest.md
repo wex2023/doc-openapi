@@ -13,7 +13,13 @@ parameters:
         ranges: 
 
 content_markdown: >-
-    #### **限流规则**\n\n\n    1次/秒/IP\n\n\n    此方法不需要签名。
+    #### **限流规则**
+
+
+    1次/秒/IP
+
+
+    此方法不需要签名。
 left_code_blocks:
     -
         code_block:

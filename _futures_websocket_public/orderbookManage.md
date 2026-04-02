@@ -12,9 +12,9 @@ parameters:
 content_markdown: |-
     **How to maintain a local order book correctly**
 
-    1. Connect to `wss://fstream.xt.com/ws/market`, subscribe to `depth_update@btc_usdt`.
+    1. Connect to `wss://fstream.wexex.io/ws/market`, subscribe to `depth_update@btc_usdt`.
     2. Buffer events received from the stream.
-    3. Fetch a depth snapshot: `https://fapi.xt.com/future/market/v1/public/depth?symbol=btc_usdt&level=500`.
+    3. Fetch a depth snapshot: `https://fapi.wexex.io/future/market/v1/public/depth?symbol=btc_usdt&level=500`.
     4. Discard any event where `u <= lastUpdateId` in the snapshot.
     5. The first processed event should satisfy `fu <= lastUpdateId + 1` and `u >= lastUpdateId + 1`.
     6. While listening, each new event's `fu` should equal the previous event's `u + 1`.

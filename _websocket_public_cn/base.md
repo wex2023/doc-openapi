@@ -15,7 +15,7 @@ parameters:
 content_markdown: |-
     **基础地址**
 
-    wss://stream.xt.com/public
+    wss://stream.wexex.io/public
 
     &nbsp;
 
@@ -29,7 +29,7 @@ left_code_blocks:
             # pip install websocket-client
             import websocket
 
-            url = "wss://stream.xt.com/public"
+            url = "wss://stream.wexex.io/public"
             headers = ["Sec-WebSocket-Extensions: permessage-deflate"]
 
             ws = websocket.WebSocket()

@@ -8,9 +8,9 @@ content_markdown: >-
     #### Base URLs
 
 
-    - **USDT-M:** `https://fapi.xt.com` (for USDT-margined futures)
+    - **USDT-M:** `https://fapi.wexex.io` (for USDT-margined futures)
 
-    - **Coin-M:** `https://dapi.xt.com` (for Coin-margined futures)
+    - **Coin-M:** `https://dapi.wexex.io` (for Coin-margined futures)
 
 
     #### Network Recommendation

@@ -17,7 +17,7 @@ left_code_blocks:
     -
         code_block: |-
             public void getIndexPrice() {
-                String text = HttpUtil.get("https://fapi.xt.com/future/market/v1/public/q/symbol-index-price?symbol=btc_usdt");
+                String text = HttpUtil.get("https://fapi.wexex.io/future/market/v1/public/q/symbol-index-price?symbol=btc_usdt");
                 System.out.println(text);
             }
         title: Java

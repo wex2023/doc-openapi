@@ -17,7 +17,7 @@ left_code_blocks:
     -
         code_block: |-
             public void getAllMarkPrice() {
-                String text = HttpUtil.get("https://fapi.xt.com/future/market/v1/public/q/mark-price");
+                String text = HttpUtil.get("https://fapi.wexex.io/future/market/v1/public/q/mark-price");
                 System.out.println(text);
             }
         title: Java

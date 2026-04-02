@@ -38,7 +38,7 @@ left_code_blocks:
     -
         code_block: |-
             public void getRiskBalance() {
-                String text = HttpUtil.get("https://fapi.xt.com/future/market/v1/public/contract/risk-balance?symbol=eth_usdt&limit=10");
+                String text = HttpUtil.get("https://fapi.wexex.io/future/market/v1/public/contract/risk-balance?symbol=eth_usdt&limit=10");
                 System.out.println(text);
             }
         title: Java

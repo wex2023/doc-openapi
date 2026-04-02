@@ -45,7 +45,7 @@ left_code_blocks:
     -
         code_block: |-
             public void getKline() {
-                String text = HttpUtil.get("https://fapi.xt.com/future/market/v1/public/q/kline?symbol=eth_usdt&interval=1m");
+                String text = HttpUtil.get("https://fapi.wexex.io/future/market/v1/public/q/kline?symbol=eth_usdt&interval=1m");
                 System.out.println(text);
             }
         title: Java

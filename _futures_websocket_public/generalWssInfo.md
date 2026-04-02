@@ -10,7 +10,7 @@ parameters:
         description:
         ranges:
 content_markdown: |-
-    **Base URL**: `wss://fstream.xt.com/ws/market` (Public channels; no listenKey required)
+    **Base URL**: `wss://fstream.wexex.io/ws/market` (Public channels; no listenKey required)
 
     &nbsp;
 

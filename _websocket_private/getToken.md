@@ -25,7 +25,7 @@ content_markdown: |-
 left_code_blocks:
     -
         code_block: |-
-            curl --location --request POST 'https://sapi.xt.com/v4/ws-token' \
+            curl --location --request POST 'https://sapi.wexex.io/v4/ws-token' \
               --header 'accept: */*' \
               --header 'Content-Type: application/json' \
               --header 'validate-algorithms: HmacSHA256' \

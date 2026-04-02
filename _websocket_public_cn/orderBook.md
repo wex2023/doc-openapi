@@ -17,13 +17,13 @@ content_markdown: |-
     **如何正确管理本地订单簿**
 
 
-    1.建立到 wss://stream.xt.com/public 的连接，例如 depth\_update@btc\_usdt。
+    1.建立到 wss://stream.wexex.io/public 的连接，例如 depth\_update@btc\_usdt。
 
 
     2.缓存从数据流接收到的事件。
 
 
-    3.从 https://sapi.xt.com/v4/public/depth?symbol=btc\_usdt&limit=500 获取深度快照。
+    3.从 https://sapi.wexex.io/v4/public/depth?symbol=btc\_usdt&limit=500 获取深度快照。
 
 
     4.丢弃快照中 i <= lastUpdateId 的所有事件。

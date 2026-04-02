@@ -17,7 +17,7 @@ left_code_blocks:
     -
         code_block: |-
             public void getClientIp() {
-                String text = HttpUtil.get("https://fapi.xt.com/future/public/client");
+                String text = HttpUtil.get("https://fapi.wexex.io/future/public/client");
                 System.out.println(text);
             }
         title: Java

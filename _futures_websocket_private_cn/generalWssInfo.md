@@ -10,7 +10,7 @@ parameters:
         description:
         ranges:
 content_markdown: |-
-    **WebSocket 基础地址**: `wss://fstream.xt.com/ws/user`（用户私人频道）
+    **WebSocket 基础地址**: `wss://fstream.wexex.io/ws/user`（用户私人频道）
 
     &nbsp;
 
@@ -24,7 +24,7 @@ content_markdown: |-
 
     **订阅步骤**
 
-    1. 调用接口获取 **ListenKey**：`GET https://fapi.xt.com/future/user/v1/user/listen-key`
+    1. 调用接口获取 **ListenKey**：`GET https://fapi.wexex.io/future/user/v1/user/listen-key`
     2. 建立 WebSocket 后，订阅用户相关事件时发送订阅 JSON
 
     &nbsp;

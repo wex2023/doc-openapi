@@ -17,7 +17,7 @@ left_code_blocks:
     -
         code_block: |-
             public void getSymbolList() {
-                String text = HttpUtil.get("https://fapi.xt.com/future/market/v3/public/symbol/list");
+                String text = HttpUtil.get("https://fapi.wexex.io/future/market/v3/public/symbol/list");
                 System.out.println(text);
             }
         title: Java

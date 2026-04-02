@@ -12,9 +12,9 @@ parameters:
 content_markdown: |-
     **如何正确管理本地订单簿**
 
-    1. 建立连接：`wss://fstream.xt.com/ws/market`，订阅 `depth_update@btc_usdt`。
+    1. 建立连接：`wss://fstream.wexex.io/ws/market`，订阅 `depth_update@btc_usdt`。
     2. 缓存从数据流接收到的事件。
-    3. 获取深度快照：`https://fapi.xt.com/future/market/v1/public/depth?symbol=btc_usdt&level=500`。
+    3. 获取深度快照：`https://fapi.wexex.io/future/market/v1/public/depth?symbol=btc_usdt&level=500`。
     4. 丢弃快照中 `u <= lastUpdateId` 的任何事件。
     5. 第一个处理的事件应满足 `fu <= lastUpdateId + 1` 且 `u >= lastUpdateId + 1`。
     6. 在监听数据流时，每个新事件的 `fu` 应等于前一个事件的 `u + 1`。

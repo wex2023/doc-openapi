@@ -38,7 +38,7 @@ left_code_blocks:
     -
         code_block: |-
             public void getFundingRateRecord() {
-                String text = HttpUtil.get("https://fapi.xt.com/future/market/v1/public/q/funding-rate-record?symbol=eth_usdt&limit=5");
+                String text = HttpUtil.get("https://fapi.wexex.io/future/market/v1/public/q/funding-rate-record?symbol=eth_usdt&limit=5");
                 System.out.println(text);
             }
         title: Java

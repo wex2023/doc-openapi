@@ -30,7 +30,7 @@ left_code_blocks:
     -
         code_block: |-
             public void getDepth() {
-                String text = HttpUtil.get("https://fapi.xt.com/future/market/v1/public/q/depth?symbol=btc_usdt&level=1");
+                String text = HttpUtil.get("https://fapi.wexex.io/future/market/v1/public/q/depth?symbol=btc_usdt&level=1");
                 System.out.println(text);
             }
         title: Java

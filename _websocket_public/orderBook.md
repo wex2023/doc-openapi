@@ -17,13 +17,13 @@ content_markdown: |-
     **How to manage a local order book correctly**
 
 
-    1.Open a stream to wss://stream.xt.com/public , e.g. depth\_update@btc\_usdt.
+    1.Open a stream to wss://stream.wexex.io/public , e.g. depth\_update@btc\_usdt.
 
 
     2.Buffer the events you receive from the stream.
 
 
-    3.Get a depth snapshot from https://sapi.xt.com/v4/public/depth?symbol=btc\_usdt&limit=500
+    3.Get a depth snapshot from https://sapi.wexex.io/v4/public/depth?symbol=btc\_usdt&limit=500
 
 
     4.Drop any event where i <= lastUpdateId in the snapshot.

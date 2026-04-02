@@ -5,8 +5,8 @@ parameters:
 - name:
 content:
 content_markdown: |-
-    WEX API Telegram Group: [WEX API Support Group](https://t.me/XT_api)
-    WEX API Ticket: [Create API Ticket](https://xtsupport.zendesk.com/hc/zh-cn/requests/new?ticket_form_id=14988676408857)
+    WEX API Telegram Group: [WEX API Support Group](https://t.me/WEX_api)
+    WEX API Ticket: [Create API Ticket](https://wexsupport.zendesk.com/hc/zh-cn/requests/new?ticket_form_id=14988676408857)
 
     - For any general questions about the API not covered in the documentation.
     - For any MM questions
