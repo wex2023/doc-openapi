@@ -5,10 +5,7 @@ parameters:
 - name:
 content:
 content_markdown: >-
-    Some interfaces require users to apply for an API Key. After obtaining the API Key, users will receive a pair of keys - one for the APPKEY to be included in the HTTP request header and the other for generating the signature.
-
-
-    How to create an API Key? Please visit: [How to create API-KEY](https://wexsupport.zendesk.com/hc/zh-cn/articles/900006868163)
+    Some interfaces require users to apply for an API Key. After obtaining the API Key, users will receive a pair of keys - one for the APPKEY to be included in the HTTP request header and the other for generating the signature. Please create your API Key in the user center of the WEX website or App.
 
 left_code_blocks:
 - code_block:

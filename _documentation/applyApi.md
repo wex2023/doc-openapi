@@ -5,10 +5,7 @@ parameters:
 - name:
 content:
 content_markdown: >-
-    Some interfaces may require the user's **API Key**.
-
-
-    How to create an API Key - please refer to the official documentation: [How to Apply for API Trading & Create API Key](https://wexsupport.zendesk.com/hc/zh-cn/articles/900006868163-%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7API%E4%BA%A4%E6%98%93-%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAAPI%E5%AF%86%E9%92%A5-)
+    Some interfaces may require the user's **API Key**. Please create your API Key in the user center of the WEX website or App.
 left_code_blocks:
 - code_block:
   title:
