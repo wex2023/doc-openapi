@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CHANGELOG</title>
+  <style>
+
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #1a1a1a;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<h1 id="wex-api-文档更新日志">WEX API 文档更新日志</h1>
+<blockquote>
+<p>更新日期：2026-04-02 参考来源：XT 最新 API 文档 (xt-api)
+范围：现货交易 + 合约交易（中英文双语）</p>
+</blockquote>
+<hr />
+<h2 id="一基础设施变更">一、基础设施变更</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>变更内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_config.yml</code></td>
+<td>新增 14 个合约交易 Jekyll collections（7 英文 + 7 中文）</td>
+</tr>
+<tr>
+<td><code>_layouts/default.html</code></td>
+<td>添加 Spot / Futures 标签切换、合约侧边栏、更新 JS 导航逻辑</td>
+</tr>
+<tr>
+<td><code>index.html</code></td>
+<td>添加合约交易内容区块 <code>{% include futures.html %}</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="二现货文档更新">二、现货文档更新</h2>
+<h3 id="接入说明">2.1 接入说明</h3>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>变更内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apiBasicInfo</td>
+<td>添加 bold 格式强调 “query Params”、“request body”、“signed”</td>
+</tr>
+<tr>
+<td>limitRules</td>
+<td>重构为项目符号列表 + bold 格式，结构更清晰</td>
+</tr>
+<tr>
+<td>signStatement</td>
+<td>全部重写：改为 5 步结构化说明，新增 recvwindow
+详细解释，添加”时间戳超前 1 秒即拒绝”的说明</td>
+</tr>
+<tr>
+<td>signSteps</td>
+<td>更新示例密钥；重写 Data Part / Header Part / Generate Signature /
+Complete Example 四大章节；添加 Content-Type 一致性和 raw JSON
+签名注意事项</td>
+</tr>
+<tr>
+<td>applyApi</td>
+<td>更新 Zendesk 链接为 WEX 支持地址</td>
+</tr>
+<tr>
+<td>apiDemo</td>
+<td>更新 SDK 链接到 GitHub（Java / Golang / C# demo），添加 sample
+request 链接</td>
+</tr>
+<tr>
+<td>returnFormat</td>
+<td>修复 JSON 格式（缺少逗号等）</td>
+</tr>
+<tr>
+<td>errorCode</td>
+<td>新增错误码：SYMBOL_007、SYMBOL_010、SYMBOL_011、ORDER_F0503、ORDER_F0504、ORDER_F0704，更新已有错误码描述</td>
+</tr>
+<tr>
+<td>publicModule</td>
+<td>更新 IOC / GTX 描述，改善中文标签</td>
+</tr>
+<tr>
+<td>FAQ</td>
+<td>重新格式化为结构化项目符号 + bold 强调</td>
+</tr>
+<tr>
+<td><strong>contactUs</strong></td>
+<td><strong>新建</strong>：Telegram 群组、Zendesk
+客服、在线支持链接</td>
+</tr>
+</tbody>
+</table>
+<h3 id="订单">2.2 订单</h3>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>变更内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderPost</td>
+<td>新增 <code>nftId</code> 参数；限流 50 →
+<strong>20</strong>/s/apikey；新增
+Remark（买入/卖出市价单规则）；响应新增 <code>ip</code> 字段</td>
+</tr>
+<tr>
+<td>orderGet</td>
+<td>限流 100 → <strong>10</strong>/s/apikey；响应新增 <code>ip</code>
+字段；更新响应注释</td>
+</tr>
+<tr>
+<td>orderGetQueryParam</td>
+<td>新增限流 50/s/apikey（原来缺失）；更新参数/响应描述</td>
+</tr>
+<tr>
+<td>orderDel</td>
+<td>限流 100 → N/A；修正英文标题拼写 “Cancell” → “Cancel”</td>
+</tr>
+<tr>
+<td>openOrderGet</td>
+<td>响应新增 <code>ip</code> 字段</td>
+</tr>
+<tr>
+<td>openOrderDel</td>
+<td><code>bizType</code> 参数从 mandatory=false 改为
+<strong>mandatory=true</strong></td>
+</tr>
+<tr>
+<td>batchOrderGet</td>
+<td>响应新增 <code>ip</code> 字段；改善 content_markdown 文本</td>
+</tr>
+<tr>
+<td>batchOrderDel</td>
+<td>描述和说明文本微调</td>
+</tr>
+<tr>
+<td>historyOrderGet</td>
+<td>响应新增 <code>ip</code> 字段；改善 startTime / endTime /
+hiddenCanceled / state 参数描述</td>
+</tr>
+<tr>
+<td><strong>batchOrderPost</strong></td>
+<td><strong>新建</strong>：POST <code>/v4/batch-order</code>，含 item.*
+嵌套参数，限流 30/s/apikey</td>
+</tr>
+<tr>
+<td><strong>orderUpdate</strong></td>
+<td><strong>新建</strong>：PUT <code>/v4/order/{orderId}</code>，参数
+orderId / price / quantity，限流 50/s/apikey</td>
+</tr>
+</tbody>
+</table>
+<h3 id="市场数据">2.3 市场数据</h3>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>变更内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1serverInfo</td>
+<td>清理空参数占位符</td>
+</tr>
+<tr>
+<td>2symbol</td>
+<td>限流 100 →
+<strong>10</strong>/s/ip；响应移除废弃字段（<code>id</code>、<code>baseCurrencyId</code>、<code>quoteCurrencyId</code>、<code>plates</code>）；新增
+<code>takerFeeRate</code>、<code>makerFeeRate</code>；简化 Filter
+文档</td>
+</tr>
+<tr>
+<td>3depth</td>
+<td>默认 limit 50 → <strong>100</strong>；限流 200 →
+<strong>10</strong>/s/ip</td>
+</tr>
+<tr>
+<td>4kline</td>
+<td>限流 100 → <strong>10</strong>/s/ip</td>
+</tr>
+<tr>
+<td>5tradeRecent</td>
+<td>限流 100 → <strong>10</strong>/s/ip；ranges 格式修正
+<code>1，1000</code> → <code>1~1000</code></td>
+</tr>
+<tr>
+<td>6tradeHistory</td>
+<td>限流 100 → <strong>10</strong>/s/ip；ranges 格式修正</td>
+</tr>
+<tr>
+<td>7allTicker</td>
+<td>限流 100 → <strong>10</strong>/s/ip；更新响应注释</td>
+</tr>
+<tr>
+<td>8tickerPrice</td>
+<td>限流 100 → <strong>10</strong>/s/ip；修复 JSON 语法（缺少逗号）</td>
+</tr>
+<tr>
+<td>9tickerBook</td>
+<td>限流 100 → <strong>10</strong>/s/ip；更新响应注释</td>
+</tr>
+<tr>
+<td>10ticker24h</td>
+<td>限流 100 → <strong>10</strong>/s/ip</td>
+</tr>
+<tr>
+<td><strong>11clientInfo</strong></td>
+<td><strong>新建</strong>：GET
+<code>/v4/public/client</code>，返回客户端 IP</td>
+</tr>
+</tbody>
+</table>
+<h3 id="成交">2.4 成交</h3>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>变更内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tradeGet</td>
+<td>更新参数描述（Business type / Order side / Order type / Query
+direction /
+时间格式示例）；响应新增字段：<code>deductType</code>、<code>deductFee</code>、<code>couponAmount</code>、<code>couponCurrency</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="资产">2.5 资产</h3>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>变更内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>balanceGet</td>
+<td>修复 <code>currency</code>
+参数名（去除尾部空格）；新增响应字段注释（currency / frozen / available
+/ total / btcValuation）</td>
+</tr>
+<tr>
+<td>balancesGet</td>
+<td>更新限流文本；改善参数描述；新增响应字段注释</td>
+</tr>
+<tr>
+<td>currenciesGet</td>
+<td>更新响应注释（币种符号 / 全名 / CoinMarketCap 链接 / 权重排名 /
+最大精度 / 充提状态描述）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="websocket-public">2.6 WebSocket Public</h3>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>变更内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base</td>
+<td>从简单 URL 扩展为完整内容：新增请求头
+<code>Sec-WebSocket-Extensions: permessage-deflate</code>，新增 Python
+连接示例和响应示例</td>
+</tr>
+<tr>
+<td>requestFormat</td>
+<td>新增 Subscribe / Unsubscribe 代码块 + 响应示例</td>
+</tr>
+<tr>
+<td>heartBeat</td>
+<td>明确说明发送文本 <code>&quot;ping&quot;</code> 接收
+<code>&quot;pong&quot;</code>，新增请求/响应代码块</td>
+</tr>
+<tr>
+<td>pushMessage</td>
+<td>新增 <code>oi</code>（orderId）和
+<code>v</code>（quoteQty）字段</td>
+</tr>
+<tr>
+<td>dealRecord</td>
+<td>新增 <code>oi</code>（orderId）和
+<code>v</code>（quoteQty）字段</td>
+</tr>
+<tr>
+<td>subscribeParam</td>
+<td>新增响应示例</td>
+</tr>
+<tr>
+<td>orderBook</td>
+<td>URL 域名更新</td>
+</tr>
+<tr>
+<td>limitDepth</td>
+<td>响应数据对齐（移除多余 <code>t</code> 字段）</td>
+</tr>
+<tr>
+<td>tickerRealTime</td>
+<td>修复 JSON 尾部逗号</td>
+</tr>
+</tbody>
+</table>
+<h3 id="websocket-private">2.7 WebSocket Private</h3>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>变更内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base</td>
+<td>URL 更新为 <code>wss://stream.wexex.io/private</code></td>
+</tr>
+<tr>
+<td>getToken</td>
+<td>新增限流说明（1 req/10s/apikey）、token 有效期（2
+天）、重置行为、listenKey 等价关系；新增 curl 示例</td>
+</tr>
+<tr>
+<td>requestFormat</td>
+<td>新增 listenKey 必填说明 + id 匹配说明</td>
+</tr>
+<tr>
+<td>responseFormat</td>
+<td>修复中文版 code 值文档（1=成功 → <strong>0=成功</strong>）</td>
+</tr>
+<tr>
+<td>pushMessage</td>
+<td>新增 <code>oi</code>、<code>v</code> 字段</td>
+</tr>
+<tr>
+<td>balanceChange</td>
+<td>新增订阅示例（含 listenKey）；新增 SPOT / LEVER 支持说明</td>
+</tr>
+<tr>
+<td>entrustChange</td>
+<td>新增订阅示例；新增触发单跟踪描述</td>
+</tr>
+<tr>
+<td>orderChange</td>
+<td>新增订阅示例；新增完整订单状态列表（NEW / PARTIALLY_FILLED / FILLED
+/ CANCELED / REJECTED / EXPIRED）</td>
+</tr>
+<tr>
+<td>orderDeal</td>
+<td>新增
+<code>oi</code>（orderId）、<code>v</code>（quoteQty）、<code>b</code>（buyerMaker）、<code>tm</code>（taker/maker）字段；新增订阅示例</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="三合约文档全部新建">三、合约文档（全部新建）</h2>
+<h3 id="接入说明6-个文档">3.1 接入说明（6 个文档）</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apiBasicInfo</td>
+<td>USDT-M <code>fapi.wexex.io</code> / Coin-M
+<code>dapi.wexex.io</code>，请求方式、认证头、限流说明</td>
+</tr>
+<tr>
+<td>signStatement</td>
+<td>第三方平台安全性说明、防篡改 / 防重放 / 防过期机制</td>
+</tr>
+<tr>
+<td>signSteps</td>
+<td>Data Part + Header Part + HMAC-SHA256 生成 + 完整示例</td>
+</tr>
+<tr>
+<td>applyApi</td>
+<td>Zendesk 创建 API Key 流程</td>
+</tr>
+<tr>
+<td>errorCode</td>
+<td>合约特有错误码表</td>
+</tr>
+<tr>
+<td>changelog</td>
+<td>API 版本变更记录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="订单16-个接口">3.2 订单（16 个接口）</h3>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 45%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>接口路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createOrder</td>
+<td>POST <code>/future/trade/v1/order/create</code></td>
+<td>创建订单</td>
+</tr>
+<tr>
+<td>updateOrder</td>
+<td>POST <code>/future/trade/v1/order/update</code></td>
+<td>修改订单</td>
+</tr>
+<tr>
+<td>bulkOrders</td>
+<td>POST <code>/future/trade/v1/order/create-batch</code></td>
+<td>批量下单</td>
+</tr>
+<tr>
+<td>batchOrderPlacement</td>
+<td>POST <code>/future/trade/v2/order/atomic-create-batch</code></td>
+<td>原子批量下单</td>
+</tr>
+<tr>
+<td>seeOrdersById</td>
+<td>GET <code>/future/trade/v1/order/detail</code></td>
+<td>按 ID 查询</td>
+</tr>
+<tr>
+<td>seeOrders</td>
+<td>GET <code>/future/trade/v1/order/list</code></td>
+<td>查询订单列表</td>
+</tr>
+<tr>
+<td>cancelOrder</td>
+<td>POST <code>/future/trade/v1/order/cancel</code></td>
+<td>取消订单</td>
+</tr>
+<tr>
+<td>batchCancelOrders</td>
+<td>POST <code>/future/trade/v1/order/cancel-batch</code></td>
+<td>批量取消</td>
+</tr>
+<tr>
+<td>cancelAllOrders</td>
+<td>POST <code>/future/trade/v1/order/cancel-all</code></td>
+<td>取消全部</td>
+</tr>
+<tr>
+<td>getOpenOrderList</td>
+<td>GET <code>/future/trade/v1/order/list-open</code></td>
+<td>当前挂单</td>
+</tr>
+<tr>
+<td>seeOrderHistory</td>
+<td>GET <code>/future/trade/v1/order/list-history</code></td>
+<td>历史订单</td>
+</tr>
+<tr>
+<td>seeTransactionDetails</td>
+<td>GET <code>/future/trade/v1/order/trade-list</code></td>
+<td>成交明细</td>
+</tr>
+<tr>
+<td>partialCanceledOrders</td>
+<td>GET <code>/future/trade/v1/order/list-canceled</code></td>
+<td>部分撤单</td>
+</tr>
+<tr>
+<td>orderList</td>
+<td>GET <code>/future/trade/v1/order/OrderList</code></td>
+<td>订单列表</td>
+</tr>
+<tr>
+<td>quantOrderHistory</td>
+<td>GET <code>/future/trade/v1/order/quant-list-history</code></td>
+<td>量化历史订单</td>
+</tr>
+<tr>
+<td>quantTradeList</td>
+<td>GET <code>/future/trade/v1/order/quant-trade-list</code></td>
+<td>量化成交列表</td>
+</tr>
+</tbody>
+</table>
+<h3 id="行情数据22-个接口">3.3 行情数据（22 个接口）</h3>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 45%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>接口路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-get-client-ip</td>
+<td>GET <code>/future/market/v1/public/client</code></td>
+<td>客户端 IP</td>
+</tr>
+<tr>
+<td>2-get-trading-pair-currency</td>
+<td>GET <code>/future/market/v1/public/symbol/coins</code></td>
+<td>交易对币种</td>
+</tr>
+<tr>
+<td>3-get-config-single-trading-pair</td>
+<td>GET <code>/future/market/v1/public/symbol/detail</code></td>
+<td>单交易对配置</td>
+</tr>
+<tr>
+<td>4-get-config-listed-tradeable-symbols</td>
+<td>GET <code>/future/market/v1/public/symbol/list</code></td>
+<td>可交易配置列表</td>
+</tr>
+<tr>
+<td>5-leverage-stratification</td>
+<td>GET <code>/future/market/v1/public/leverage/bracket</code></td>
+<td>杠杆分层</td>
+</tr>
+<tr>
+<td>6-get-market-info-specific</td>
+<td>GET <code>/future/market/v1/public/q/ticker</code></td>
+<td>指定交易对行情</td>
+</tr>
+<tr>
+<td>7-get-market-info-all</td>
+<td>GET <code>/future/market/v1/public/q/tickers</code></td>
+<td>全部行情</td>
+</tr>
+<tr>
+<td>8-get-latest-transaction</td>
+<td>GET <code>/future/market/v1/public/q/deal</code></td>
+<td>最新成交</td>
+</tr>
+<tr>
+<td>9-get-depth-data</td>
+<td>GET <code>/future/market/v1/public/q/depth</code></td>
+<td>深度数据</td>
+</tr>
+<tr>
+<td>10-get-index-price-single</td>
+<td>GET <code>/future/market/v1/public/q/index-price</code></td>
+<td>指数价格（单）</td>
+</tr>
+<tr>
+<td>11-get-index-price-all</td>
+<td>GET <code>/future/market/v1/public/q/index-prices</code></td>
+<td>指数价格（全）</td>
+</tr>
+<tr>
+<td>12-get-mark-price-single</td>
+<td>GET <code>/future/market/v1/public/q/mark-price</code></td>
+<td>标记价格（单）</td>
+</tr>
+<tr>
+<td>13-get-mark-price-all</td>
+<td>GET <code>/future/market/v1/public/q/mark-prices</code></td>
+<td>标记价格（全）</td>
+</tr>
+<tr>
+<td>14-get-kline</td>
+<td>GET <code>/future/market/v1/public/q/kline</code></td>
+<td>K 线</td>
+</tr>
+<tr>
+<td>15-get-agg-ticker-specific</td>
+<td>GET <code>/future/market/v1/public/q/agg-ticker</code></td>
+<td>聚合行情（单）</td>
+</tr>
+<tr>
+<td>16-get-agg-ticker-all</td>
+<td>GET <code>/future/market/v1/public/q/agg-tickers</code></td>
+<td>聚合行情（全）</td>
+</tr>
+<tr>
+<td>17-get-funding-rate</td>
+<td>GET <code>/future/market/v1/public/q/funding-rate</code></td>
+<td>资金费率</td>
+</tr>
+<tr>
+<td>18-get-funding-rate-records</td>
+<td>GET <code>/future/market/v1/public/q/funding-rate-record</code></td>
+<td>资金费率记录</td>
+</tr>
+<tr>
+<td>19-get-ask-bid-specific</td>
+<td>GET <code>/future/market/v1/public/q/ticker-book</code></td>
+<td>买卖盘（单）</td>
+</tr>
+<tr>
+<td>20-get-ask-bid-all</td>
+<td>GET <code>/future/market/v1/public/q/ticker-books</code></td>
+<td>买卖盘（全）</td>
+</tr>
+<tr>
+<td>21-get-risk-fund-balance</td>
+<td>GET <code>/future/market/v1/public/q/risk-fund</code></td>
+<td>风险基金</td>
+</tr>
+<tr>
+<td>22-get-open-interest</td>
+<td>GET <code>/future/market/v1/public/q/open-interest</code></td>
+<td>持仓量</td>
+</tr>
+</tbody>
+</table>
+<h3 id="账户25-个接口">3.4 账户（25 个接口）</h3>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 45%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>接口路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-get-account-info</td>
+<td>GET <code>/future/user/v1/account/info</code></td>
+<td>账户信息</td>
+</tr>
+<tr>
+<td>2-get-contract-account-assets</td>
+<td>GET <code>/future/user/v1/account/assets</code></td>
+<td>合约账户资产</td>
+</tr>
+<tr>
+<td>3-get-listen-key</td>
+<td>GET <code>/future/user/v1/user/listen-key</code></td>
+<td>ListenKey</td>
+</tr>
+<tr>
+<td>4-open-contract</td>
+<td>POST <code>/future/user/v1/account/open</code></td>
+<td>开通合约</td>
+</tr>
+<tr>
+<td>5-get-single-currency-fund</td>
+<td>GET <code>/future/user/v1/balance/detail</code></td>
+<td>单币种资金</td>
+</tr>
+<tr>
+<td>6-get-user-funds</td>
+<td>GET <code>/future/user/v1/balance/list</code></td>
+<td>用户资金</td>
+</tr>
+<tr>
+<td>7-get-account-flow</td>
+<td>GET <code>/future/user/v1/balance/bills</code></td>
+<td>账户流水</td>
+</tr>
+<tr>
+<td>8-get-fund-fee</td>
+<td>GET <code>/future/user/v1/balance/fund-fee</code></td>
+<td>资金费用</td>
+</tr>
+<tr>
+<td>9-get-active-position</td>
+<td>GET <code>/future/user/v1/position/active-list</code></td>
+<td>活跃持仓</td>
+</tr>
+<tr>
+<td>10-get-position-info</td>
+<td>GET <code>/future/user/v1/position/list</code></td>
+<td>持仓信息</td>
+</tr>
+<tr>
+<td>11-get-step-rate</td>
+<td>GET <code>/future/user/v1/account/step-rate</code></td>
+<td>阶梯费率</td>
+</tr>
+<tr>
+<td>12-adjust-leverage</td>
+<td>POST <code>/future/user/v1/position/adjust-leverage</code></td>
+<td>调整杠杆</td>
+</tr>
+<tr>
+<td>13-alter-margin</td>
+<td>POST <code>/future/user/v1/position/margin</code></td>
+<td>调整保证金</td>
+</tr>
+<tr>
+<td>14-alter-auto-margin</td>
+<td>POST <code>/future/user/v1/position/auto-margin</code></td>
+<td>自动追加保证金</td>
+</tr>
+<tr>
+<td>15-close-all</td>
+<td>POST <code>/future/user/v1/position/close-all</code></td>
+<td>一键平仓</td>
+</tr>
+<tr>
+<td>16-get-adl-info</td>
+<td>GET <code>/future/user/v1/position/adl</code></td>
+<td>ADL 信息</td>
+</tr>
+<tr>
+<td>17-collect-trading-pair</td>
+<td>POST <code>/future/user/v1/user/collection/add</code></td>
+<td>收藏交易对</td>
+</tr>
+<tr>
+<td>18-cancel-collection</td>
+<td>POST <code>/future/user/v1/user/collection/cancel</code></td>
+<td>取消收藏</td>
+</tr>
+<tr>
+<td>19-list-collected-pairs</td>
+<td>GET <code>/future/user/v1/user/collection/list</code></td>
+<td>收藏列表</td>
+</tr>
+<tr>
+<td>20-change-position-type</td>
+<td>POST <code>/future/user/v1/position/change-type</code></td>
+<td>切换持仓模式</td>
+</tr>
+<tr>
+<td>21-get-margin-call-info</td>
+<td>GET <code>/future/user/v1/position/margin-call</code></td>
+<td>强平信息</td>
+</tr>
+<tr>
+<td>22-get-auto-deleverage-history</td>
+<td>GET <code>/future/user/v1/position/adl-history</code></td>
+<td>ADL 历史</td>
+</tr>
+<tr>
+<td>23-get-single-coin-balance</td>
+<td>GET <code>/future/user/v1/balance/coin</code></td>
+<td>单币余额</td>
+</tr>
+<tr>
+<td>24-get-taker-over-list</td>
+<td>GET <code>/future/user/v1/position/taker-over</code></td>
+<td>接管列表</td>
+</tr>
+<tr>
+<td>25-get-profit-list-history</td>
+<td>GET <code>/future/user/v1/position/profit-history</code></td>
+<td>盈亏历史</td>
+</tr>
+</tbody>
+</table>
+<h3 id="委托28-个接口">3.5 委托（28 个接口）</h3>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 45%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th>文件</th>
+<th>接口路径</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createStopLimit</td>
+<td>POST <code>/future/trade/v1/entrust/create-profit</code></td>
+<td>创建止盈止损</td>
+</tr>
+<tr>
+<td>seeStopLimit</td>
+<td>GET <code>/future/trade/v1/entrust/profit-list</code></td>
+<td>查询止盈止损</td>
+</tr>
+<tr>
+<td>seeStopLimitByProfitId</td>
+<td>GET <code>/future/trade/v1/entrust/profit-detail</code></td>
+<td>按 ID 查询</td>
+</tr>
+<tr>
+<td>alterStopLimit</td>
+<td>POST <code>/future/trade/v1/entrust/update-profit</code></td>
+<td>修改止盈止损</td>
+</tr>
+<tr>
+<td>cancelStopLimit</td>
+<td>POST <code>/future/trade/v1/entrust/cancel-profit</code></td>
+<td>取消止盈止损</td>
+</tr>
+<tr>
+<td>cancelAllStopLimit</td>
+<td>POST <code>/future/trade/v1/entrust/cancel-all-profit</code></td>
+<td>取消全部止盈止损</td>
+</tr>
+<tr>
+<td>createTriggerOrders</td>
+<td>POST <code>/future/trade/v1/entrust/create-plan</code></td>
+<td>创建触发单</td>
+</tr>
+<tr>
+<td>seeTriggerOrders</td>
+<td>GET <code>/future/trade/v1/entrust/plan-list</code></td>
+<td>查询触发单</td>
+</tr>
+<tr>
+<td>seeTriggerOrdersByEntrustId</td>
+<td>GET <code>/future/trade/v1/entrust/plan-detail</code></td>
+<td>按 ID 查询触发单</td>
+</tr>
+<tr>
+<td>seeTriggerOrdersHistory</td>
+<td>GET <code>/future/trade/v1/entrust/plan-list-history</code></td>
+<td>触发单历史</td>
+</tr>
+<tr>
+<td>cancelTriggerOrders</td>
+<td>POST <code>/future/trade/v1/entrust/cancel-plan</code></td>
+<td>取消触发单</td>
+</tr>
+<tr>
+<td>cancelAllTriggerOrders</td>
+<td>POST <code>/future/trade/v1/entrust/cancel-all-plan</code></td>
+<td>取消全部触发单</td>
+</tr>
+<tr>
+<td>createTrack</td>
+<td>POST <code>/future/trade/v1/entrust/create-track</code></td>
+<td>创建追踪单</td>
+</tr>
+<tr>
+<td>getTrackList</td>
+<td>GET <code>/future/trade/v1/entrust/track-list</code></td>
+<td>查询追踪单</td>
+</tr>
+<tr>
+<td>getHistoryTrackList</td>
+<td>GET <code>/future/trade/v1/entrust/track-list-history</code></td>
+<td>追踪单历史</td>
+</tr>
+<tr>
+<td>getSingleTrackDetail</td>
+<td>GET <code>/future/trade/v1/entrust/track-detail</code></td>
+<td>追踪单详情</td>
+</tr>
+<tr>
+<td>cancelTrack</td>
+<td>POST <code>/future/trade/v1/entrust/cancel-track</code></td>
+<td>取消追踪单</td>
+</tr>
+<tr>
+<td>cancelAllTrack</td>
+<td>POST <code>/future/trade/v1/entrust/cancel-all-track</code></td>
+<td>取消全部追踪单</td>
+</tr>
+<tr>
+<td>queryReversePlan</td>
+<td>GET <code>/future/trade/v1/entrust/reverse-plan</code></td>
+<td>反向计划查询</td>
+</tr>
+<tr>
+<td>reversePlanListHistory</td>
+<td>GET <code>/future/trade/v1/entrust/reverse-plan-history</code></td>
+<td>反向计划历史</td>
+</tr>
+<tr>
+<td>getPositionHistory</td>
+<td>GET <code>/future/trade/v1/entrust/position-history</code></td>
+<td>持仓历史</td>
+</tr>
+<tr>
+<td>getLeverageInfo</td>
+<td>GET <code>/future/trade/v1/entrust/leverage-info</code></td>
+<td>杠杆信息</td>
+</tr>
+<tr>
+<td>getCrossMargin</td>
+<td>GET <code>/future/trade/v1/entrust/cross-margin</code></td>
+<td>全仓保证金</td>
+</tr>
+<tr>
+<td>getActivePosition</td>
+<td>GET <code>/future/trade/v1/entrust/active-position</code></td>
+<td>活跃持仓</td>
+</tr>
+<tr>
+<td>profitListHistory</td>
+<td>GET <code>/future/trade/v1/entrust/profit-list-history</code></td>
+<td>盈亏历史</td>
+</tr>
+<tr>
+<td>tradeHistory</td>
+<td>GET <code>/future/trade/v1/entrust/trade-history</code></td>
+<td>成交历史</td>
+</tr>
+<tr>
+<td>tradeListAll</td>
+<td>GET <code>/future/trade/v1/entrust/trade-list-all</code></td>
+<td>全部成交</td>
+</tr>
+<tr>
+<td>queryAllOrders</td>
+<td>GET <code>/future/trade/v1/entrust/order-all</code></td>
+<td>全部订单</td>
+</tr>
+</tbody>
+</table>
+<h3 id="websocket-public10-个频道">3.6 WebSocket Public（10
+个频道）</h3>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>订阅 Topic</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>generalWssInfo</td>
+<td><code>wss://fstream.wexex.io/ws/market</code></td>
+<td>基本信息</td>
+</tr>
+<tr>
+<td>orderbookManage</td>
+<td>—</td>
+<td>订单簿管理指南</td>
+</tr>
+<tr>
+<td>tradeRecord</td>
+<td><code>trade@{symbol}</code></td>
+<td>成交记录</td>
+</tr>
+<tr>
+<td>kline</td>
+<td><code>kline@{symbol},{interval}</code></td>
+<td>K 线</td>
+</tr>
+<tr>
+<td>aggTicker</td>
+<td><code>agg_ticker@{symbol}</code></td>
+<td>聚合行情</td>
+</tr>
+<tr>
+<td>indexPrice</td>
+<td><code>index_price@{symbol}</code></td>
+<td>指数价格</td>
+</tr>
+<tr>
+<td>markPrice</td>
+<td><code>mark_price@{symbol}</code></td>
+<td>标记价格</td>
+</tr>
+<tr>
+<td>incrementalDepth</td>
+<td><code>depth_update@{symbol}</code></td>
+<td>增量深度</td>
+</tr>
+<tr>
+<td>limitedDepth</td>
+<td><code>depth@{symbol},{levels}</code></td>
+<td>限制深度</td>
+</tr>
+<tr>
+<td>fundRate</td>
+<td><code>fund_rate@{symbol}</code></td>
+<td>资金费率</td>
+</tr>
+</tbody>
+</table>
+<h3 id="websocket-private6-个频道">3.7 WebSocket Private（6
+个频道）</h3>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>订阅 Topic</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>generalWssInfo</td>
+<td><code>wss://fstream.wexex.io/ws/user</code></td>
+<td>基本信息</td>
+</tr>
+<tr>
+<td>userOrder</td>
+<td><code>order@{ListenKey}</code></td>
+<td>用户订单</td>
+</tr>
+<tr>
+<td>balanceChange</td>
+<td><code>balance@{ListenKey}</code></td>
+<td>余额变更</td>
+</tr>
+<tr>
+<td>changePosition</td>
+<td><code>position@{ListenKey}</code></td>
+<td>持仓变更</td>
+</tr>
+<tr>
+<td>transactions</td>
+<td><code>trade@{ListenKey}</code></td>
+<td>成交推送</td>
+</tr>
+<tr>
+<td>message</td>
+<td><code>notify@{ListenKey}</code></td>
+<td>通知消息</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="四全局品牌替换">四、全局品牌替换</h2>
+<table>
+<thead>
+<tr>
+<th>替换项</th>
+<th>原值</th>
+<th>新值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>现货 REST</td>
+<td><code>sapi.xt.com</code></td>
+<td><code>sapi.wexex.io</code></td>
+</tr>
+<tr>
+<td>现货 WS</td>
+<td><code>stream.xt.com</code></td>
+<td><code>stream.wexex.io</code></td>
+</tr>
+<tr>
+<td>合约 USDT-M</td>
+<td><code>fapi.xt.com</code></td>
+<td><code>fapi.wexex.io</code></td>
+</tr>
+<tr>
+<td>合约 Coin-M</td>
+<td><code>dapi.xt.com</code></td>
+<td><code>dapi.wexex.io</code></td>
+</tr>
+<tr>
+<td>合约 WS</td>
+<td><code>fstream.xt.com</code> / <code>fstream.x.group</code></td>
+<td><code>fstream.wexex.io</code></td>
+</tr>
+<tr>
+<td>交易对示例</td>
+<td><code>XT_USDT</code></td>
+<td><code>BTC_USDT</code></td>
+</tr>
+<tr>
+<td>Telegram</td>
+<td><code>t.me/XT_api</code></td>
+<td><code>t.me/WEX_api</code></td>
+</tr>
+<tr>
+<td>客服</td>
+<td><code>xtsupport.zendesk.com</code></td>
+<td><code>wexsupport.zendesk.com</code></td>
+</tr>
+<tr>
+<td>品牌文本</td>
+<td><code>XT API</code> / <code>XT</code></td>
+<td><code>WEX API</code> / <code>WEX</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="五统计">五、统计</h2>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>修改文件</td>
+<td>113</td>
+</tr>
+<tr>
+<td>新增文件</td>
+<td>235</td>
+</tr>
+<tr>
+<td>总计</td>
+<td>348</td>
+</tr>
+<tr>
+<td>新增行数</td>
+<td>19,257</td>
+</tr>
+<tr>
+<td>修改行数</td>
+<td>1,961</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
