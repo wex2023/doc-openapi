@@ -16,7 +16,7 @@ content_markdown: >-
     #### Network Recommendation
 
 
-    It is **not recommended** to access XT APIs via proxy due to **high latency and poor stability**.
+    It is **not recommended** to access WEX APIs via proxy due to **high latency and poor stability**.
 
 
     #### Request Methods
@@ -36,7 +36,7 @@ content_markdown: >-
     #### API Categories
 
 
-    XT API endpoints are divided into **Public Interfaces** and **User Interfaces**.
+    WEX API endpoints are divided into **Public Interfaces** and **User Interfaces**.
 
 
     **Public Interfaces** - No authentication required. Parameters are placed in the QueryString. Usually use the GET method.

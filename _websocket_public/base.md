@@ -34,7 +34,7 @@ left_code_blocks:
 
             ws = websocket.WebSocket()
             ws.connect(url, header=headers)
-            print("Connected to XT public WSS")
+            print("Connected to WEX public WSS")
         title: Python
         language: python
 right_code_blocks:

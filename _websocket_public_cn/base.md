@@ -34,7 +34,7 @@ left_code_blocks:
 
             ws = websocket.WebSocket()
             ws.connect(url, header=headers)
-            print("已连接到 XT 公共 WSS")
+            print("已连接到 WEX 公共 WSS")
         title: Python
         language: python
 right_code_blocks:

@@ -8,7 +8,7 @@ content_markdown: >-
     #### Signature Parameters Description
 
 
-    Since XT provides open APIs to third-party platforms, data security must be ensured - for example, preventing data tampering, avoiding outdated data, blocking duplicate submissions, and controlling request frequency. Among these, **data integrity verification** is the most crucial aspect.
+    Since WEX provides open APIs to third-party platforms, data security must be ensured - for example, preventing data tampering, avoiding outdated data, blocking duplicate submissions, and controlling request frequency. Among these, **data integrity verification** is the most crucial aspect.
 
 
     #### Signature Parameters
